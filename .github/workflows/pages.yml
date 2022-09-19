@@ -32,9 +32,6 @@ jobs:
       - name: "Run Generate"
         run: pnpm run generate
 
-      - name: "Git Status"
-        run: git status
-
       - name: "Upload assets"
         uses: cloudflare/pages-action@1
         with:
