@@ -7,22 +7,22 @@ export default defineNuxtConfig({
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {},
-    },
+      autoprefixer: {}
+    }
   },
   typescript: {
-    strict: true,
+    strict: true
   },
   googleFonts: {
     families: {
-      Inter: true,
+      Inter: true
     },
-    download: false,
+    download: false
   },
   build: {
-    postcss: {},
+    postcss: {}
   },
   colorMode: {
-    classSuffix: "",
-  },
+    classSuffix: ""
+  }
 });

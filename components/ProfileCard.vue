@@ -10,7 +10,7 @@ const appConfig = useAppConfig();
       <div
         class="rounded-full w-24 h-24 bg-contain mt-1 mb-4 mx-auto"
         :style="{
-          'background-image': `url('https://avatars.githubusercontent.com/${appConfig.socials.github}')`,
+          'background-image': `url('https://avatars.githubusercontent.com/${appConfig.socials.github}')`
         }"
       />
 

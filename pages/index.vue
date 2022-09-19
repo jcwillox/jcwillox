@@ -5,9 +5,9 @@ useHead({
     { name: "description", content: "My personal showcase website." },
     {
       property: "og:image",
-      content: "https://avatars.githubusercontent.com/jcwillox",
-    },
-  ],
+      content: "https://avatars.githubusercontent.com/jcwillox"
+    }
+  ]
 });
 
 const icons = {
@@ -15,7 +15,7 @@ const icons = {
   "logos:go": "https://golang.org",
   "simple-icons:fastapi": {
     url: "https://fastapi.tiangolo.com",
-    color: "#009485",
+    color: "#009485"
   },
   "logos:typescript-icon": "https://typescriptlang.org",
   "logos:vue": "https://vuejs.org",
@@ -31,7 +31,7 @@ const icons = {
   "logos:java": "https://java.com",
   "logos:mariadb-icon": "https://mariadb.org",
   "logos:postgresql": "https://postgresql.org",
-  "logos:bash-icon": "https://gnu.org/software/bash",
+  "logos:bash-icon": "https://gnu.org/software/bash"
 };
 
 const secondaryIcons = {
@@ -39,7 +39,7 @@ const secondaryIcons = {
   // assembly
   "logos:mongodb-icon": "https://www.mongodb.com",
   "vscode-icons:file-type-scala": "https://www.scala-lang.org",
-  "logos:google-cloud": "https://cloud.google.com",
+  "logos:google-cloud": "https://cloud.google.com"
 };
 </script>
 

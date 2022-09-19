@@ -11,7 +11,7 @@ const colors: Record<string, string> = {
   "c#": "#178600",
   powershell: "#012456",
   vue: "#41b883",
-  java: "#b07219",
+  java: "#b07219"
 };
 </script>
 

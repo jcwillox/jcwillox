@@ -5,8 +5,8 @@
     "dev:clean": "npm run clean -s && nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "format": "prettier src/ --write",
-    "format:check": "prettier src/ --check",
+    "format": "prettier --write {**/*,*}.{js,ts,jsx,tsx,yaml,css,json,vue}",
+    "format:check": "prettier --check {**/*,*}.{js,ts,jsx,tsx,yaml,css,json,vue}",
     "clean": "del-cli .nuxt .output dist"
   },
   "devDependencies": {

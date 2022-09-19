@@ -5,9 +5,9 @@ const props = defineProps<{
 
 const appConfig = useAppConfig();
 const repo = computed(() =>
-    props.repo.includes("/")
-        ? props.repo
-        : `${appConfig.socials.github}/${props.repo}`
+  props.repo.includes("/")
+    ? props.repo
+    : `${appConfig.socials.github}/${props.repo}`
 );
 
 interface GitHubResponse {
@@ -20,33 +20,33 @@ interface GitHubResponse {
   default_branch: string;
 }
 
-const {data} = useFetch<GitHubResponse>(
-    `https://api.github.com/repos/${repo.value}`,
-    {
-      key: `gh-${repo.value}`,
-      pick: [
-        "description",
-        "stargazers_count",
-        "language",
-        "license",
-        "default_branch",
-      ],
-    }
+const { data } = useFetch<GitHubResponse>(
+  `https://api.github.com/repos/${repo.value}`,
+  {
+    key: `gh-${repo.value}`,
+    pick: [
+      "description",
+      "stargazers_count",
+      "language",
+      "license",
+      "default_branch"
+    ]
+  }
 );
 </script>
 
 <template>
   <div
-      class="flex flex-col grow rounded text-sm p-4 bg-zinc-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800"
+    class="flex flex-col grow rounded text-sm p-4 bg-zinc-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800"
   >
     <div class="inline-flex items-center mb-3">
       <Icon
-          class="mr-2 text-slate-600 dark:text-zinc-400"
-          icon="octicon:repo-16"
+        class="mr-2 text-slate-600 dark:text-zinc-400"
+        icon="octicon:repo-16"
       />
       <NuxtLink
-          :to="`https://github.com/${repo}`"
-          class="text-lg font-semibold leading-tight hover:underline text-blue-600 dark:text-blue-500"
+        :to="`https://github.com/${repo}`"
+        class="text-lg font-semibold leading-tight hover:underline text-blue-600 dark:text-blue-500"
       >
         {{ repo.split("/")[1] }}
       </NuxtLink>
@@ -55,24 +55,24 @@ const {data} = useFetch<GitHubResponse>(
       {{ data?.description }}
     </div>
     <div class="actions flex items-center mt-2">
-      <LangDot :color="data?.language"/>
+      <LangDot :color="data?.language" />
       <span class="capitalize">{{ data?.language || "Unknown" }}</span>
 
       <NuxtLink
-          v-if="data?.license"
-          :to="`https://github.com/${repo}/blob/${
+        v-if="data?.license"
+        :to="`https://github.com/${repo}/blob/${
           data?.default_branch || 'main'
         }/LICENSE`"
       >
-        <Icon class="ml-4 mr-2" icon="octicon:law-16" size="21"/>
+        <Icon class="ml-4 mr-2" icon="octicon:law-16" size="21" />
         <span>{{ data.license.spdx_id }}</span>
       </NuxtLink>
 
       <NuxtLink
-          v-if="data?.stargazers_count"
-          :to="`https://github.com/${repo}/stargazers`"
+        v-if="data?.stargazers_count"
+        :to="`https://github.com/${repo}/stargazers`"
       >
-        <Icon class="ml-4 mr-1" icon="octicon:star-16" size="21"/>
+        <Icon class="ml-4 mr-1" icon="octicon:star-16" size="21" />
         <span>{{ data?.stargazers_count }}</span>
       </NuxtLink>
     </div>

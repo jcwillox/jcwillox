@@ -6,7 +6,7 @@ const modes = ["light", "dark", "system"];
 const cIdx = computed(() => modes.indexOf(colorMode.preference));
 const navigation = {
   Home: "/",
-  Projects: "/projects",
+  Projects: "/projects"
 };
 
 const nextTheme = () => {
@@ -19,7 +19,7 @@ const themeIcon = computed(
     [
       "heroicons-solid:sun",
       "heroicons-solid:moon",
-      "heroicons:computer-desktop-20-solid",
+      "heroicons:computer-desktop-20-solid"
     ][cIdx.value]
 );
 </script>

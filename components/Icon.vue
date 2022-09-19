@@ -7,7 +7,7 @@ withDefaults(
     size?: string;
   }>(),
   {
-    size: "24",
+    size: "24"
   }
 );
 </script>

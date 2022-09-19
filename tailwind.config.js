@@ -10,15 +10,15 @@ module.exports = {
     `composables/**/*.ts`,
     `plugins/**/*.ts`,
     `app.vue`,
-    "nuxt.config.ts",
+    "nuxt.config.ts"
   ],
   darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
-      },
-    },
+        sans: ["Inter", ...defaultTheme.fontFamily.sans]
+      }
+    }
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography")]
 };
