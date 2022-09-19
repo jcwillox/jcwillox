@@ -1,5 +1,10 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  '@nuxtjs/color-mode@3.1.5':
+    hash: 6hlf5daeondlx3q4igwpqsk6j4
+    path: patches/@nuxtjs__color-mode@3.1.5.patch
+
 specifiers:
   '@iconify/vue': ^4.0.0
   '@nuxt/content': ^2.1.1
@@ -19,7 +24,7 @@ specifiers:
 devDependencies:
   '@iconify/vue': 4.0.0_vue@3.2.39
   '@nuxt/content': 2.1.1
-  '@nuxtjs/color-mode': 3.1.5
+  '@nuxtjs/color-mode': 3.1.5_6hlf5daeondlx3q4igwpqsk6j4
   '@nuxtjs/google-fonts': 3.0.0-0
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
   '@vueuse/core': 9.2.0_vue@3.2.39
@@ -716,7 +721,7 @@ packages:
       - webpack
     dev: true
 
-  /@nuxtjs/color-mode/3.1.5:
+  /@nuxtjs/color-mode/3.1.5_6hlf5daeondlx3q4igwpqsk6j4:
     resolution: {integrity: sha512-i5guOxWn3XkHwVdzLZ7iYGMw9fasj6UjiQYaVtD3PyuFNBY3LtdoipUS7ItkMo89ZnOYwf88dLURwOtx247rRw==}
     dependencies:
       '@nuxt/kit': 3.0.0-rc.10
@@ -729,6 +734,7 @@ packages:
       - vite
       - webpack
     dev: true
+    patched: true
 
   /@nuxtjs/google-fonts/3.0.0-0:
     resolution: {integrity: sha512-ZVq2Yqgmi/6duUQig1Zme8s/CbTkTT1jA1o4f+Bc9su/8jZMnIBz0VUw5TSHCupZurhOi3aUYNEfYt8VFjljfg==}
