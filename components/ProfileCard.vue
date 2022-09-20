@@ -7,11 +7,10 @@ const appConfig = useAppConfig();
     <div
       class="inline-block px-8 py-10 rounded-xl text-center bg-zinc-100/80 dark:bg-zinc-900/80 backdrop-blur shadow-lg dark:shadow-zinc-900"
     >
-      <div
-        class="rounded-full w-24 h-24 bg-contain mt-1 mb-4 mx-auto"
-        :style="{
-          'background-image': `url('https://avatars.githubusercontent.com/${appConfig.socials.github}')`
-        }"
+      <Avatar
+        size="96px"
+        class="mt-1 mb-4"
+        :src="`https://avatars.githubusercontent.com/${appConfig.socials.github}`"
       />
 
       <div class="text-sky-700 dark:text-sky-500 font-semibold">
