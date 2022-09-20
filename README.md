@@ -1,19 +1,7 @@
-## Welcome <img src="https://api.iconify.design/line-md/sun-rising-loop.svg?color=%23ffc107" width="16">
-
-
-
+## Welcome ![](https://api.iconify.design/line-md/sun-rising-loop.svg?color=%23ffc107&width=16) [![Ko-Fi](https://api.iconify.design/line-md/coffee-half-empty-twotone-loop.svg?color=%23ff5f5f&width=16)](https://ko-fi.com/jcwillox) [![LinkedIn](https://api.iconify.design/line-md/linkedin.svg?color=%230a66c2&width=16)](https://www.linkedin.com/in/joshua-cowie-willox)
 
 | [![Josh's GitHub stats](https://github-readme-stats.vercel.app/api?username=jcwillox&show_icons=true&custom_title=Josh%27s%20GitHub%20Stats&count_private=true&theme=codeSTACKr)](https://github.com/jcwillox) | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jcwillox&layout=compact&exclude_repo=snowy-cabin,dotfiles&theme=codeSTACKr&langs_count=8)](https://github.com/jcwillox) |
 | - | - |
-    
-
-    
-    
-
-    
-
-
-
 
 <!--
 **jcwillox/jcwillox** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
