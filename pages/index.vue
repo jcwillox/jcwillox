@@ -2,7 +2,7 @@
 useHead({
   title: "Joshua Cowie-Willox",
   meta: [
-    { name: "description", content: "My personal showcase website." },
+    { name: "description", content: "My personal showcase website" },
     {
       property: "og:image",
       content: "https://avatars.githubusercontent.com/jcwillox"

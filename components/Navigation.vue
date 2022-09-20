@@ -26,7 +26,7 @@ const themeIcon = computed(
 
 <template>
   <header
-    class="sticky top-0 z-40 w-full backdrop-blur border-b border-slate-200 dark:border-zinc-900 bg-zinc-100/80 dark:bg-[#0c0c0d]/80"
+    class="sticky top-0 z-40 w-full backdrop-blur border-b border-slate-200 dark:border-zinc-800 bg-zinc-100/80 dark:bg-zinc-900/80"
   >
     <div class="flex items-center px-4 py-2">
       <nav class="flex max-w-full flex-1 items-center gap-2 py-1 text-sm">
@@ -34,8 +34,8 @@ const themeIcon = computed(
           v-for="(link, title) of navigation"
           :key="link"
           :to="link"
-          class="px-4 py-2 rounded text-sm font-semibold transition hover:bg-zinc-200 dark:hover:bg-zinc-900"
-          active-class="bg-zinc-200 dark:bg-zinc-900"
+          class="px-4 py-2 rounded text-sm font-semibold transition hover:bg-zinc-200 dark:hover:bg-zinc-800"
+          active-class="bg-zinc-200 dark:bg-zinc-800 shadow-inner dark:shadow-zinc-900"
         >
           {{ title }}
         </NuxtLink>
@@ -47,7 +47,7 @@ const themeIcon = computed(
           size="24"
           @click="nextTheme()"
         />
-        <div class="border-r border-slate-200 dark:border-zinc-900" />
+        <div class="border-r border-slate-200 dark:border-zinc-800" />
         <NuxtLink :to="appConfig.links.github">
           <IconButton icon="mdi:github" size="24" />
         </NuxtLink>
