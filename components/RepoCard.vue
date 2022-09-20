@@ -17,6 +17,7 @@ interface GitHubResponse {
   license: {
     spdx_id: string;
   } | null;
+  homepage: string;
   default_branch: string;
 }
 
@@ -29,6 +30,7 @@ const { data } = useFetch<GitHubResponse>(
       "stargazers_count",
       "language",
       "license",
+      "homepage",
       "default_branch"
     ]
   }
@@ -49,6 +51,13 @@ const { data } = useFetch<GitHubResponse>(
         class="text-lg font-semibold leading-tight hover:underline text-blue-600 dark:text-blue-500"
       >
         {{ repo.split("/")[1] }}
+      </NuxtLink>
+      <NuxtLink
+        v-if="data?.homepage"
+        :to="data.homepage"
+        class="grow self-start text-right mt-[-3px]"
+      >
+        <IconButton icon="octicon:link-external-16" size="16" />
       </NuxtLink>
     </div>
     <div class="grow">
