@@ -44,18 +44,17 @@ const themeIcon = computed(
         <IconButton
           :icon="themeIcon"
           class="cursor-pointer"
-          size="24"
           @click="nextTheme()"
         />
         <div class="border-r border-slate-200 dark:border-zinc-800" />
         <NuxtLink :to="appConfig.links.github">
-          <IconButton icon="mdi:github" size="24" />
+          <IconButton icon="mdi:github" />
         </NuxtLink>
         <NuxtLink :to="appConfig.links.linkedin">
-          <IconButton icon="mdi:linkedin" size="24" />
+          <IconButton icon="mdi:linkedin" />
         </NuxtLink>
         <NuxtLink :to="appConfig.links.kofi">
-          <IconButton icon="mdi:coffee" size="24" />
+          <IconButton icon="mdi:coffee" />
         </NuxtLink>
       </div>
     </div>

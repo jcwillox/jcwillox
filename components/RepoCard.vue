@@ -43,8 +43,8 @@ const { data } = useFetch<GitHubResponse>(
   >
     <div class="inline-flex items-center mb-3">
       <Icon
-        class="mr-2 text-slate-600 dark:text-zinc-400"
         icon="octicon:repo-16"
+        class="mr-2 text-slate-600 dark:text-zinc-400"
       />
       <NuxtLink
         :to="`https://github.com/${repo}`"
@@ -73,7 +73,7 @@ const { data } = useFetch<GitHubResponse>(
           data?.default_branch || 'main'
         }/LICENSE`"
       >
-        <Icon class="ml-4 mr-2" icon="octicon:law-16" size="21" />
+        <Icon icon="octicon:law-16" size="21" class="ml-4 mr-2" />
         <span>{{ data.license.spdx_id }}</span>
       </NuxtLink>
 
@@ -81,7 +81,7 @@ const { data } = useFetch<GitHubResponse>(
         v-if="data?.stargazers_count"
         :to="`https://github.com/${repo}/stargazers`"
       >
-        <Icon class="ml-4 mr-1" icon="octicon:star-16" size="21" />
+        <Icon icon="octicon:star-16" size="21" class="ml-4 mr-1" />
         <span>{{ data?.stargazers_count }}</span>
       </NuxtLink>
     </div>

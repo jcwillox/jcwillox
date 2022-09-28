@@ -32,20 +32,15 @@ useHead({
 
       <div class="inline-flex gap-2 mt-4">
         <NuxtLink :to="appConfig.links.github">
-          <IconButton icon="line-md:github-loop" size="24" />
+          <IconButton icon="line-md:github-loop" />
         </NuxtLink>
         <NuxtLink :to="appConfig.links.linkedin">
-          <IconButton
-            icon="line-md:linkedin"
-            style="color: #0a66c2"
-            size="24"
-          />
+          <IconButton icon="line-md:linkedin" style="color: #0a66c2" />
         </NuxtLink>
         <NuxtLink :to="appConfig.links.kofi">
           <IconButton
             icon="line-md:coffee-half-empty-twotone-loop"
             style="color: #ff5f5f"
-            size="24"
           />
         </NuxtLink>
       </div>

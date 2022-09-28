@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
+import { loadIcon } from "@iconify/vue";
+import { Icon as Iconify } from "@iconify/vue/offline";
 
-withDefaults(
+const props = withDefaults(
   defineProps<{
     icon: string;
     size?: string;
@@ -10,8 +11,12 @@ withDefaults(
     size: "24"
   }
 );
+
+const { data } = useAsyncData(`$i${props.icon}`, () => loadIcon(props.icon), {
+  watch: [() => props.icon]
+});
 </script>
 
 <template>
-  <Icon :icon="icon" :width="size" :height="size" class="inline-block" />
+  <Iconify :icon="data" :width="size" :height="size" class="inline-block" />
 </template>
