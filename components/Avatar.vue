@@ -11,6 +11,6 @@ useHead({ link: [{ rel: "preload", as: "image", href: props.src }] });
   <img
     class="rounded-full bg-contain mx-auto h-auto"
     :src="src"
-    :style="{ width: size }"
+    :style="{ width: size, height: size }"
   />
 </template>
