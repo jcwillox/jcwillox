@@ -16,8 +16,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Inter: true
-    },
-    download: false
+    }
   },
   build: {
     postcss: {}

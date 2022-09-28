@@ -1,17 +1,16 @@
 <script setup lang="ts">
-defineProps<{
-  size: string;
+const props = defineProps<{
   src: string;
+  size: string;
 }>();
+
+useHead({ link: [{ rel: "preload", as: "image", href: props.src }] });
 </script>
 
 <template>
-  <div
-    class="rounded-full bg-contain mx-auto"
-    :style="{
-      width: size,
-      height: size,
-      'background-image': `url('${src}')`
-    }"
-  ></div>
+  <img
+    class="rounded-full bg-contain mx-auto h-auto"
+    :src="src"
+    :style="{ width: size }"
+  />
 </template>
