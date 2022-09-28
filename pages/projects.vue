@@ -8,6 +8,7 @@ useHead({
 <template>
   <Columns :cols="3">
     <RepoCardGroup title="Python" icon="logos:python" repo="up-bank-api" />
+    <RepoCardGroup title="Python" icon="logos:python" repo="hass-auto-backup" />
     <RepoCardGroup
       title="Vuetify + FastAPI"
       icon="logos:vuetifyjs"
