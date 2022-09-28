@@ -52,10 +52,11 @@ const { data } = useFetch<GitHubResponse>(
       >
         {{ repo.split("/")[1] }}
       </NuxtLink>
+      <div class="grow" />
       <NuxtLink
         v-if="data?.homepage"
         :to="data.homepage"
-        class="grow self-start text-right mt-[-3px]"
+        class="self-start mt-[-3px]"
       >
         <IconButton icon="octicon:link-external-16" size="16" />
       </NuxtLink>
