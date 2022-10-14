@@ -1,10 +1,13 @@
-## Welcome ![](https://api.iconify.design/line-md/sun-rising-loop.svg?color=%23ffc107&width=16) [![Ko-Fi](https://api.iconify.design/line-md/coffee-half-empty-twotone-loop.svg?color=%23ff5f5f&width=16)](https://ko-fi.com/jcwillox) [![LinkedIn](https://api.iconify.design/line-md/linkedin.svg?color=%230a66c2&width=16)](https://www.linkedin.com/in/joshua-cowie-willox)
+## Welcome ![](https://api.iconify.design/line-md/sun-rising-loop.svg?color=%23ffc107&width=16) [![Ko-Fi](https://api.iconify.design/line-md/coffee-half-empty-twotone-loop.svg?color=%23ff5f5f&width=16)](https://ko-fi.com/jcwillox) [![LinkedIn](https://api.iconify.design/line-md/linkedin.svg?color=%230a66c2&width=16)](https://linkedin.com/in/joshua-cowie-willox) [![Website](https://api.iconify.design/line-md/external-link.svg?color=%23f06292&width=13)](https://jcwillox.com)
 
-| [![Josh's GitHub stats](https://github-readme-stats.vercel.app/api?username=jcwillox&show_icons=true&custom_title=Josh%27s%20GitHub%20Stats&count_private=true&theme=codeSTACKr)](https://github.com/jcwillox) | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jcwillox&layout=compact&exclude_repo=snowy-cabin,dotfiles&theme=codeSTACKr&langs_count=8)](https://github.com/jcwillox) |
-| - | - |
+<p align="center">
+  <a href="https://github.com/jcwillox"><img alt="Josh's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=jcwillox&show_icons=true&custom_title=Josh%27s%20GitHub%20Stats&count_private=true&theme=codeSTACKr" width="56.23%"></a>
+  &nbsp;
+    <a href="https://github.com/jcwillox"><img alt="Top Langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jcwillox&layout=compact&exclude_repo=snowy-cabin,dotfiles&theme=codeSTACKr&langs_count=8" width="40.8%"></a>
+</p>
 
 <!--
-**jcwillox/jcwillox** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+📁 List of active and demo projects at [jcwillox.com/projects](https://jcwillox.com/projects)
 
 Here are some ideas to get you started:
 
