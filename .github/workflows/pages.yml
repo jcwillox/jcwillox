@@ -28,7 +28,7 @@ jobs:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
 
       - name: "Install dependencies"
-        run: pnpm install --shamefully-hoist
+        run: pnpm install
 
       - name: "Run Generate"
         run: pnpm run generate

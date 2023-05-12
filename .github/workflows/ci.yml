@@ -20,7 +20,7 @@ jobs:
           cache: ${{ !env.ACT && 'pnpm' || '' }}
 
       - name: "Install dependencies"
-        run: pnpm install --shamefully-hoist
+        run: pnpm install
 
       - name: "Check format"
         run: pnpm run format:check
