@@ -18,17 +18,13 @@ jobs:
       - name: "Checkout the repository"
         uses: actions/checkout@v3
 
-      - name: "Extract engines"
-        id: engines
-        run: echo ::set-output name=node::$(jq --raw-output .engines.node ./package.json)
-
       - name: "Setup pnpm"
         uses: pnpm/action-setup@v2
 
       - name: "Setup node"
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ steps.engines.outputs.node }}
+          node-version-file: package.json
           cache: ${{ !env.ACT && 'pnpm' || '' }}
 
       - name: "Install dependencies"
