@@ -13,15 +13,6 @@ const nextTheme = () => {
   const nIdx = (((cIdx.value + 1) % 3) + 3) % 3;
   colorMode.preference = modes[nIdx];
 };
-
-const themeIcon = computed(
-  () =>
-    [
-      "heroicons-solid:sun",
-      "heroicons-solid:moon",
-      "heroicons:computer-desktop-20-solid"
-    ][cIdx.value]
-);
 </script>
 
 <template>
@@ -42,7 +33,20 @@ const themeIcon = computed(
       </nav>
       <div class="flex gap-2">
         <IconButton
-          :icon="themeIcon"
+          v-show="cIdx === 0"
+          icon="heroicons-solid:sun"
+          class="cursor-pointer"
+          @click="nextTheme()"
+        />
+        <IconButton
+          v-show="cIdx === 1"
+          icon="heroicons-solid:moon"
+          class="cursor-pointer"
+          @click="nextTheme()"
+        />
+        <IconButton
+          v-show="cIdx === 2"
+          icon="heroicons:computer-desktop-20-solid"
           class="cursor-pointer"
           @click="nextTheme()"
         />

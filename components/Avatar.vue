@@ -9,8 +9,9 @@ useHead({ link: [{ rel: "preload", as: "image", href: props.src }] });
 
 <template>
   <img
-    class="rounded-full bg-contain mx-auto h-auto"
     :src="src"
     :style="{ width: size, height: size }"
+    class="rounded-full bg-contain mx-auto h-auto"
+    alt="avatar"
   />
 </template>
