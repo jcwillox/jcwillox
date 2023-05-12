@@ -10,20 +10,20 @@
     "clean": "del-cli .nuxt .output dist"
   },
   "devDependencies": {
-    "@iconify/vue": "^4.0.0",
-    "@nuxtjs/color-mode": "^3.1.5",
+    "@iconify/vue": "4.0.0",
+    "@nuxtjs/color-mode": "3.1.5",
     "@nuxtjs/google-fonts": "3.0.0-0",
-    "@octokit/rest": "^19.0.4",
-    "@tailwindcss/typography": "^0.5.7",
-    "@vueuse/core": "^9.2.0",
-    "@vueuse/nuxt": "^9.2.0",
-    "autoprefixer": "^10.4.11",
-    "del-cli": "^5.0.0",
-    "nuxt": "^3.0.0-rc.10",
-    "postcss": "^8.4.16",
-    "prettier": "^2.7.1",
-    "tailwindcss": "^3.1.8",
-    "vue": "^3.2.39"
+    "@octokit/rest": "19.0.4",
+    "@tailwindcss/typography": "0.5.7",
+    "@vueuse/core": "9.2.0",
+    "@vueuse/nuxt": "9.2.0",
+    "autoprefixer": "10.4.11",
+    "del-cli": "5.0.0",
+    "nuxt": "3.0.0-rc.10",
+    "postcss": "8.4.16",
+    "prettier": "2.7.1",
+    "tailwindcss": "3.1.8",
+    "vue": "3.2.39"
   },
   "packageManager": "pnpm@8.4.0",
   "engines": {
