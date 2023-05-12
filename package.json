@@ -1,29 +1,31 @@
 {
+  "private": true,
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
-    "dev:clean": "npm run clean -s && nuxt dev",
+    "dev:clean": "pnpm clean && nuxt dev",
+    "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "format": "prettier --write {**/*,*}.{js,ts,jsx,tsx,yaml,css,json,vue}",
-    "format:check": "prettier --check {**/*,*}.{js,ts,jsx,tsx,yaml,css,json,vue}",
+    "format": "prettier --cache --write .",
+    "format:check": "prettier --cache --check .",
     "clean": "del-cli .nuxt .output dist"
   },
-  "devDependencies": {
+  "dependencies": {
     "@iconify/vue": "4.1.1",
     "@nuxtjs/color-mode": "3.2.0",
     "@nuxtjs/google-fonts": "3.0.0",
+    "@nuxtjs/tailwindcss": "6.6.8",
     "@octokit/rest": "19.0.7",
-    "@tailwindcss/typography": "0.5.9",
     "@vueuse/core": "10.1.2",
     "@vueuse/nuxt": "10.1.2",
-    "autoprefixer": "10.4.14",
-    "del-cli": "5.0.0",
     "nuxt": "3.4.3",
-    "postcss": "8.4.23",
-    "prettier": "2.8.8",
-    "tailwindcss": "3.3.2",
     "vue": "3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "0.5.9",
+    "del-cli": "5.0.0",
+    "prettier": "2.8.8",
+    "tailwindcss": "3.3.2"
   },
   "packageManager": "pnpm@8.5.0",
   "engines": {

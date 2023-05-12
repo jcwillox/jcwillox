@@ -1,25 +1,16 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
+// https://nuxt.com/docs/getting-started/configuration#nuxt-configuration
 
 export default defineNuxtConfig({
-  target: "static",
-  modules: ["@nuxtjs/color-mode", "@nuxtjs/google-fonts", "@vueuse/nuxt"],
-  css: ["@/assets/css/main.css"],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {}
-    }
-  },
-  typescript: {
-    strict: true
-  },
+  modules: [
+    "@nuxtjs/color-mode",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-fonts",
+    "@vueuse/nuxt"
+  ],
   googleFonts: {
     families: {
       Inter: true
     }
-  },
-  build: {
-    postcss: {}
   },
   colorMode: {
     classSuffix: ""
