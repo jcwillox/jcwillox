@@ -13,6 +13,9 @@ dependencies:
   '@nuxtjs/tailwindcss':
     specifier: 6.6.8
     version: 6.6.8(webpack@5.82.1)
+  '@nuxtjs/web-vitals':
+    specifier: 0.2.5
+    version: 0.2.5
   '@octokit/rest':
     specifier: 19.0.7
     version: 19.0.7
@@ -910,6 +913,19 @@ packages:
       - supports-color
       - ts-node
       - webpack
+    dev: false
+
+  /@nuxtjs/web-vitals@0.2.5:
+    resolution: {integrity: sha512-A2AeO7RpzARxQ3lBf3U8UMPDaM8Y4TIBDDMUZ5IeYJazWHIJe+5Mw9fhdvE2VrOUY+zNmEDAEKkc3YujKc7rcg==}
+    dependencies:
+      '@nuxt/kit': 3.4.3
+      defu: 6.1.2
+      pathe: 1.1.0
+      ufo: 1.1.2
+      web-vitals: 3.3.1
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
     dev: false
 
   /@octokit/auth-token@3.0.3:
@@ -6141,6 +6157,10 @@ packages:
   /web-streams-polyfill@3.2.1:
     resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
     engines: {node: '>= 8'}
+    dev: false
+
+  /web-vitals@3.3.1:
+    resolution: {integrity: sha512-LTfY5GjcY3ngFzNsYFSYL+AmVmlWrzPTUxSMDis2rZbf+SzT7HH3NH4Y/l45XOlrAIunOBeURN9qtBHkRskAiA==}
     dev: false
 
   /webidl-conversions@3.0.1:
