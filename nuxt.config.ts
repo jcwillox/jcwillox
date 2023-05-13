@@ -1,11 +1,19 @@
 // https://nuxt.com/docs/getting-started/configuration#nuxt-configuration
 
-export default defineNuxtConfig({
+import type { NuxtConfig } from "@nuxt/schema";
+
+const config: NuxtConfig = {
   modules: [
     "@nuxtjs/color-mode",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt"
+  ],
+  plugins: [
+    {
+      src: "~/plugins/vercel.ts",
+      mode: "client"
+    }
   ],
   googleFonts: {
     families: {
@@ -15,4 +23,6 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: ""
   }
-});
+};
+
+export default config;
