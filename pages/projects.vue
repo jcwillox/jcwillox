@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useHead({
   title: "Projects",
-  meta: [{ name: "description", content: "A portfolio of my projects" }]
+  meta: [{ name: "description", content: "A portfolio of my projects" }],
 });
 </script>
 

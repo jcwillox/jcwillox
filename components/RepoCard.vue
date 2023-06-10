@@ -31,8 +31,8 @@ const { data } = useFetch<GitHubResponse>(
       "language",
       "license",
       "homepage",
-      "default_branch"
-    ]
+      "default_branch",
+    ],
   }
 );
 </script>

@@ -7,9 +7,9 @@ useHead({
     { name: "description", content: "My personal showcase website" },
     {
       property: "og:image",
-      content: "https://avatars.githubusercontent.com/jcwillox"
-    }
-  ]
+      content: "https://avatars.githubusercontent.com/jcwillox",
+    },
+  ],
 });
 </script>
 

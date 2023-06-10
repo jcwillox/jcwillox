@@ -6,7 +6,7 @@ const modes = ["light", "dark", "system"];
 const cIdx = computed(() => modes.indexOf(colorMode.preference));
 const navigation = {
   Home: "/",
-  Projects: "/projects"
+  Projects: "/projects",
 };
 
 const nextTheme = () => {

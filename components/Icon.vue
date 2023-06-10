@@ -8,12 +8,12 @@ const props = withDefaults(
     size?: string;
   }>(),
   {
-    size: "24"
+    size: "24",
   }
 );
 
 const { data } = useAsyncData(`$i${props.icon}`, () => loadIcon(props.icon), {
-  watch: [() => props.icon]
+  watch: [() => props.icon],
 });
 </script>
 

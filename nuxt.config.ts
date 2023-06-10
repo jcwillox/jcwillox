@@ -7,22 +7,22 @@ const config: NuxtConfig = {
     "@nuxtjs/color-mode",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
-    "@vueuse/nuxt"
+    "@vueuse/nuxt",
   ],
   plugins: [
     {
       src: "~/plugins/vercel.ts",
-      mode: "client"
-    }
+      mode: "client",
+    },
   ],
   googleFonts: {
     families: {
-      Inter: true
-    }
+      Inter: true,
+    },
   },
   colorMode: {
-    classSuffix: ""
-  }
+    classSuffix: "",
+  },
 };
 
 export default config;
