@@ -18,5 +18,11 @@ const { data } = useAsyncData(`$i${props.icon}`, () => loadIcon(props.icon), {
 </script>
 
 <template>
-  <Iconify :icon="data" :width="size" :height="size" class="inline-block" />
+  <Iconify
+    v-if="data"
+    :icon="data"
+    :width="size"
+    :height="size"
+    class="inline-block"
+  />
 </template>

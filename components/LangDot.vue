@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  color?: string;
+  color?: string | null;
 }>();
 
 const colors: Record<string, string> = {
@@ -18,6 +18,8 @@ const colors: Record<string, string> = {
 <template>
   <div
     class="w-4 h-4 rounded-full mr-2 bg-gray-600"
-    :style="{ 'background-color': color && colors[color.toLowerCase()] }"
+    :style="{
+      'background-color': color ? colors[color.toLowerCase()] : undefined,
+    }"
   ></div>
 </template>
