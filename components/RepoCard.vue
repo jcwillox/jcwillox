@@ -4,37 +4,28 @@ const props = defineProps<{
 }>();
 
 const appConfig = useAppConfig();
-const repo = computed(() =>
+
+const owner = computed(() =>
   props.repo.includes("/")
-    ? props.repo
-    : `${appConfig.socials.github}/${props.repo}`
+    ? props.repo.split("/", 1)[0]
+    : appConfig.socials.github
+);
+const name = computed(() =>
+  props.repo.includes("/") ? props.repo.split("/", 2)[1] : props.repo
 );
 
-interface GitHubResponse {
-  description: string;
-  stargazers_count: number;
-  language: string;
-  license: {
-    spdx_id: string;
-  } | null;
-  homepage: string;
-  default_branch: string;
-}
-
-const { data } = useFetch<GitHubResponse>(
-  `https://api.github.com/repos/${repo.value}`,
-  {
-    key: `gh-${repo.value}`,
-    pick: [
-      "description",
-      "stargazers_count",
-      "language",
-      "license",
-      "homepage",
-      "default_branch",
-    ],
-  }
-);
+const { data } = useFetch(`/api/repos/${owner.value}/${name.value}`, {
+  key: `gh-${owner.value}-${name.value}`,
+  pick: [
+    "description",
+    "stargazers_count",
+    "language",
+    "license",
+    "homepage",
+    "default_branch",
+    "html_url",
+  ],
+});
 </script>
 
 <template>
@@ -47,10 +38,10 @@ const { data } = useFetch<GitHubResponse>(
         class="mr-2 text-slate-600 dark:text-zinc-400"
       />
       <NuxtLink
-        :to="`https://github.com/${repo}`"
+        :to="`https://github.com/${owner}/${name}`"
         class="text-lg font-semibold leading-tight hover:underline text-blue-600 dark:text-blue-500"
       >
-        {{ repo.split("/")[1] }}
+        {{ name }}
       </NuxtLink>
       <div class="grow" />
       <NuxtLink
@@ -70,9 +61,7 @@ const { data } = useFetch<GitHubResponse>(
 
       <NuxtLink
         v-if="data?.license"
-        :to="`https://github.com/${repo}/blob/${
-          data?.default_branch || 'main'
-        }/LICENSE`"
+        :to="`https://github.com/${owner}/${name}/blob/${data.default_branch}/LICENSE`"
       >
         <Icon icon="octicon:law-16" size="21" class="ml-4 mr-2" />
         <span>{{ data.license.spdx_id }}</span>
@@ -80,10 +69,10 @@ const { data } = useFetch<GitHubResponse>(
 
       <NuxtLink
         v-if="data?.stargazers_count"
-        :to="`https://github.com/${repo}/stargazers`"
+        :to="`https://github.com/${owner}/${name}/stargazers`"
       >
         <Icon icon="octicon:star-16" size="21" class="ml-4 mr-1" />
-        <span>{{ data?.stargazers_count }}</span>
+        <span>{{ data.stargazers_count }}</span>
       </NuxtLink>
     </div>
   </div>

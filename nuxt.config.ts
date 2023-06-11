@@ -1,8 +1,5 @@
-// https://nuxt.com/docs/getting-started/configuration#nuxt-configuration
-
-import type { NuxtConfig } from "@nuxt/schema";
-
-const config: NuxtConfig = {
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
   modules: [
     "@nuxtjs/color-mode",
     "@nuxtjs/tailwindcss",
@@ -17,6 +14,14 @@ const config: NuxtConfig = {
   colorMode: {
     classSuffix: "",
   },
-};
-
-export default config;
+  nitro: {
+    storage: {
+      cache: {
+        driver: "vercelKV",
+      },
+    },
+  },
+  runtimeConfig: {
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+  },
+});
