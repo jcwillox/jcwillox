@@ -9,12 +9,6 @@ const config: NuxtConfig = {
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
   ],
-  plugins: [
-    {
-      src: "~/plugins/vercel.ts",
-      mode: "client",
-    },
-  ],
   googleFonts: {
     families: {
       Inter: true,
