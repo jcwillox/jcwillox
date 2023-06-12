@@ -26,6 +26,7 @@ export default defineNuxtConfig({
   },
   devtools: true,
   typescript: {
+    strict: true,
     typeCheck: true,
   },
 });

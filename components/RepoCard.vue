@@ -14,7 +14,7 @@ const name = computed(() =>
   props.repo.includes("/") ? props.repo.split("/", 2)[1] : props.repo
 );
 
-const { data } = useFetch(`/api/repos/${owner.value}/${name.value}`, {
+const { data } = await useFetch(`/api/repos/${owner.value}/${name.value}`, {
   key: `gh-${owner.value}-${name.value}`,
   pick: [
     "description",
