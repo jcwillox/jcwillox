@@ -36,8 +36,8 @@ dependencies:
     specifier: 3.6.1
     version: 3.6.1(@types/node@18.16.18)(@vercel/kv@0.2.2)(typescript@5.1.5)(vue-tsc@1.8.2)
   radash:
-    specifier: 10.9.0
-    version: 10.9.0
+    specifier: 11.0.0
+    version: 11.0.0
   vue:
     specifier: 3.3.4
     version: 3.3.4
@@ -6278,8 +6278,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /radash@10.9.0:
-    resolution: {integrity: sha512-0pijGuxnF5CgEdRwrCEHjx4onaXWpmVligyKzfn7hIjpOl11n+9x8le6R3gFjAs2e6d7WT39vcZw1AWHt3w9Jw==}
+  /radash@11.0.0:
+    resolution: {integrity: sha512-CRWxTFTDff0IELGJ/zz58yY4BDgyI14qSM5OLNKbCItJrff7m7dXbVF0kWYVCXQtPb3SXIVhXvAImH6eT7VLSg==}
     engines: {node: '>=14.18.0'}
     dev: false
 
