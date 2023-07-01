@@ -22,7 +22,7 @@
     "@vueuse/core": "10.2.0",
     "@vueuse/nuxt": "10.2.0",
     "nuxt": "3.6.1",
-    "radash": "10.9.0",
+    "radash": "11.0.0",
     "vue": "3.3.4"
   },
   "devDependencies": {
