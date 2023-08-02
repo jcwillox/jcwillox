@@ -19,8 +19,8 @@
     "@nuxtjs/web-vitals": "0.2.6",
     "@vercel/analytics": "1.0.1",
     "@vercel/kv": "0.2.2",
-    "@vueuse/core": "10.2.0",
-    "@vueuse/nuxt": "10.2.0",
+    "@vueuse/core": "10.3.0",
+    "@vueuse/nuxt": "10.3.0",
     "nuxt": "3.6.1",
     "radash": "11.0.0",
     "vue": "3.3.4"
