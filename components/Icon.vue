@@ -9,7 +9,7 @@ const props = withDefaults(
   }>(),
   {
     size: "24",
-  }
+  },
 );
 
 const { data } = useAsyncData(`$i${props.icon}`, () => loadIcon(props.icon), {

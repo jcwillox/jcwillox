@@ -108,7 +108,10 @@ onBeforeUnmount(() => clear);
   right: 0px;
   width: 0%;
   opacity: 1;
-  transition: width 0.1s, height 0.4s, opacity 0.4s;
+  transition:
+    width 0.1s,
+    height 0.4s,
+    opacity 0.4s;
   z-index: 999999;
 
   @apply bg-gradient-to-r from-cyan-500 to-blue-500;

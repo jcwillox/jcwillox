@@ -8,10 +8,10 @@ const appConfig = useAppConfig();
 const owner = computed(() =>
   props.repo.includes("/")
     ? props.repo.split("/", 1)[0]
-    : appConfig.socials.github
+    : appConfig.socials.github,
 );
 const name = computed(() =>
-  props.repo.includes("/") ? props.repo.split("/", 2)[1] : props.repo
+  props.repo.includes("/") ? props.repo.split("/", 2)[1] : props.repo,
 );
 
 const { data } = await useFetch(`/api/repos/${owner.value}/${name.value}`, {

@@ -3,7 +3,7 @@ withDefaults(
   defineProps<{
     cols?: string | number;
   }>(),
-  { cols: 2 }
+  { cols: 2 },
 );
 </script>
 
