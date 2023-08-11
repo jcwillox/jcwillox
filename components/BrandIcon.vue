@@ -1,99 +1,90 @@
 <script setup lang="ts">
-interface Item {
-  icon: string;
-  link: string;
-  props?: Record<string, unknown>;
-}
-
-const items = {
+const items: Record<string, { icon: string; link: string }> = {
   python: {
-    icon: "logos:python",
+    icon: "i-logos-python",
     link: "https://python.org",
   },
   go: {
-    icon: "logos:go",
+    icon: "i-logos-go",
     link: "https://golang.org",
   },
   fastapi: {
-    icon: "simple-icons:fastapi",
+    icon: "i-simple-icons-fastapi c-[#009485]",
     link: "https://fastapi.tiangolo.com",
-    props: { style: "color: #009485" },
   },
   typescript: {
-    icon: "logos:typescript-icon",
+    icon: "i-logos-typescript-icon",
     link: "https://typescriptlang.org",
   },
   vue: {
-    icon: "logos:vue",
+    icon: "i-logos-vue",
     link: "https://vuejs.org",
   },
   vuetifyjs: {
-    icon: "logos:vuetifyjs",
+    icon: "i-logos-vuetifyjs",
     link: "https://vuetifyjs.com",
   },
   react: {
-    icon: "logos:react",
+    icon: "i-logos-react",
     link: "https://reactjs.org",
   },
   lit: {
-    icon: "logos:lit-icon",
+    icon: "i-logos-lit-icon",
     link: "https://lit.dev",
   },
   docker: {
-    icon: "logos:docker-icon",
+    icon: "i-logos-docker-icon",
     link: "https://docker.com",
   },
   git: {
-    icon: "logos:git-icon",
+    icon: "i-logos-git-icon",
     link: "https://git-scm.com",
   },
   express: {
-    icon: "logos:express",
+    icon: "i-logos-express",
     link: "https://expressjs.com",
   },
   flask: {
-    icon: "logos:flask",
+    icon: "i-logos-flask",
     link: "https://flask.palletsprojects.com",
   },
   powershell: {
-    icon: "vscode-icons:file-type-powershell",
+    icon: "i-vscode-icons-file-type-powershell",
     link: "https://microsoft.com/powershell",
   },
   java: {
-    icon: "logos:java",
+    icon: "i-logos-java",
     link: "https://java.com",
   },
   mariadb: {
-    icon: "logos:mariadb-icon",
+    icon: "i-logos-mariadb-icon",
     link: "https://mariadb.org",
   },
   postgresql: {
-    icon: "logos:postgresql",
+    icon: "i-logos-postgresql",
     link: "https://postgresql.org",
   },
   bash: {
-    icon: "logos:bash-icon",
+    icon: "i-logos-bash-icon",
     link: "https://gnu.org/software/bash",
   },
   c: {
-    icon: "logos:c",
+    icon: "i-logos-c",
     link: "https://en.wikipedia.org/wiki/C_(programming_language)",
   },
   mongodb: {
-    icon: "logos:mongodb-icon",
+    icon: "i-logos-mongodb-icon",
     link: "https://mongodb.com",
   },
   scala: {
-    icon: "vscode-icons:file-type-scala",
+    icon: "i-vscode-icons-file-type-scala",
     link: "https://scala-lang.org",
   },
   "google-cloud": {
-    icon: "logos:google-cloud",
+    icon: "i-logos-google-cloud",
     link: "https://cloud.google.com",
   },
 };
-
-const items_: Record<string, Item> = items;
 
 defineProps<{
   brand: keyof typeof items;
@@ -101,7 +92,9 @@ defineProps<{
 </script>
 
 <template>
-  <NuxtLink :to="items_[brand].link">
-    <Icon :icon="items_[brand].icon" v-bind="items_[brand].props" />
-  </NuxtLink>
+  <NuxtLink
+    :to="items[brand].link"
+    :class="items[brand].icon"
+    class="icon-inline icon"
+  />
 </template>

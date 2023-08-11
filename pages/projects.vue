@@ -7,30 +7,34 @@ useHead({
 
 <template>
   <Columns :cols="3">
-    <RepoCardGroup title="Python" icon="logos:python" repo="up-bank-api" />
-    <RepoCardGroup title="Python" icon="logos:python" repo="hass-auto-backup" />
+    <RepoCardGroup title="Python" icon="i-logos-python" repos="up-bank-api" />
+    <RepoCardGroup
+      title="Python"
+      icon="i-logos-python"
+      repos="hass-auto-backup"
+    />
     <RepoCardGroup
       title="Vuetify + FastAPI"
-      icon="logos:vuetifyjs"
-      repo="deeplabcut-webui"
+      icon="i-logos-vuetifyjs"
+      repos="deeplabcut-webui"
     />
     <RepoCardGroup
       title="React + ExpressJS"
-      icon="logos:react"
-      repo="tasky-todolist"
+      icon="i-logos-react"
+      repos="tasky-todolist"
     />
     <RepoCardGroup
       title="React + ExpressJS"
-      icon="logos:react"
-      repo="react-poems"
+      icon="i-logos-react"
+      repos="react-poems"
     />
-    <RepoCardGroup title="React Native" icon="logos:react" repo="WYB" />
+    <RepoCardGroup title="React Native" icon="i-logos-react" repos="WYB" />
     <RepoCardGroup
       title="Lit Element"
-      icon="logos:lit-icon"
-      repo="lovelace-paper-buttons-row"
+      icon="i-logos-lit-icon"
+      repos="lovelace-paper-buttons-row"
     />
-    <RepoCardGroup title="Go" icon="logos:go" repo="dotbot" />
-    <RepoCardGroup title="Java" icon="logos:java" repo="ds-client" />
+    <RepoCardGroup title="Go" icon="i-logos-go" repos="dotbot" />
+    <RepoCardGroup title="Java" icon="i-logos-java" repos="ds-client" />
   </Columns>
 </template>

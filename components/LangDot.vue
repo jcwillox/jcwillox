@@ -17,9 +17,9 @@ const colors: Record<string, string> = {
 
 <template>
   <div
-    class="w-4 h-4 rounded-full mr-2 bg-gray-600"
+    class="mr-2 h-4 w-4 rounded-full bg-gray-600"
     :style="{
       'background-color': color ? colors[color.toLowerCase()] : undefined,
     }"
-  ></div>
+  />
 </template>

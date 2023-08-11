@@ -4,13 +4,15 @@
   <Link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <Link rel="manifest" href="/site.webmanifest" />
 
-  <Navigation />
-  <NuxtLoadingBar />
+  <div class="font-sans">
+    <Navigation />
+    <NuxtLoadingIndicator />
 
-  <div
-    class="prose prose-gray dark:prose-invert m-auto max-w-screen-lg xl:max-w-screen-xl px-4 pt-4 pb-8 sm:px-8"
-  >
-    <NuxtPage class="max-w-full" />
+    <div
+      class="m-auto max-w-screen-lg px-4 pb-8 pt-4 line-height-7 prose prose-gray xl:max-w-screen-xl sm:px-8 dark:prose-invert"
+    >
+      <NuxtPage />
+    </div>
   </div>
 </template>
 

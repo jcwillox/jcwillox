@@ -1,16 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    "@nuxtjs/color-mode",
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/google-fonts",
-    "@vueuse/nuxt",
-  ],
-  googleFonts: {
-    families: {
-      Inter: true,
-    },
-  },
+  modules: ["@vueuse/nuxt", "@unocss/nuxt", "@nuxtjs/color-mode"],
+  css: ["@unocss/reset/tailwind.css"],
   colorMode: {
     classSuffix: "",
   },

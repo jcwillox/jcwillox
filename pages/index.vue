@@ -14,15 +14,14 @@ useHead({
 </script>
 
 <template>
-  <Columns class="mt-8 gap-y-8 mx-auto" style="gap: 2rem; max-width: 768px">
+  <Columns class="mx-auto mt-8 max-w-768px gap-8">
     <Box>
       <Avatar
-        size="96px"
-        class="mt-1 mb-4"
+        class="mb-4 mt-1 h-96px w-96px"
         :src="`https://avatars.githubusercontent.com/${appConfig.socials.github}`"
       />
 
-      <div class="text-sky-700 dark:text-sky-500 font-semibold">
+      <div class="font-semibold text-sky-700 dark:text-sky-500">
         {{ appConfig.fullname }}
       </div>
 
@@ -30,25 +29,25 @@ useHead({
         @{{ appConfig.socials.github }}
       </div>
 
-      <div class="inline-flex gap-2 mt-4">
-        <NuxtLink :to="appConfig.links.github">
-          <IconButton icon="line-md:github-loop" />
-        </NuxtLink>
-        <NuxtLink :to="appConfig.links.linkedin">
-          <IconButton icon="line-md:linkedin" style="color: #0a66c2" />
-        </NuxtLink>
-        <NuxtLink :to="appConfig.links.kofi">
-          <IconButton
-            icon="line-md:coffee-half-empty-twotone-loop"
-            style="color: #ff5f5f"
-          />
-        </NuxtLink>
+      <div class="mt-4 inline-flex gap-2">
+        <NuxtLink
+          :to="appConfig.links.github"
+          class="i-line-md-github-loop icon-btn"
+        />
+        <NuxtLink
+          :to="appConfig.links.linkedin"
+          class="icon i-line-md-linkedin icon-inline c-[#0a66c2]"
+        />
+        <NuxtLink
+          :to="appConfig.links.kofi"
+          class="icon i-line-md-coffee-half-empty-twotone-loop icon-inline c-[#ff5f5f]"
+        />
       </div>
     </Box>
 
     <Box class="flex justify-center">
-      <div class="text-center flex justify-center flex-col flex-wrap px-4">
-        <div class="flex flex-wrap gap-2 justify-center">
+      <div class="flex flex-col flex-wrap justify-center px-4 text-center">
+        <div class="flex flex-wrap justify-center gap-2">
           <BrandIcon brand="python" />
           <BrandIcon brand="go" />
           <BrandIcon brand="fastapi" />
@@ -68,8 +67,8 @@ useHead({
           <BrandIcon brand="postgresql" />
           <BrandIcon brand="bash" />
         </div>
-        <hr style="margin-top: 2rem; margin-bottom: 2rem" />
-        <div class="flex flex-wrap gap-2 justify-center">
+        <hr class="b-0 b-t" />
+        <div class="flex flex-wrap justify-center gap-2">
           <BrandIcon brand="c" />
           <!-- assembly -->
           <BrandIcon brand="mongodb" />

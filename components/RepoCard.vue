@@ -30,16 +30,15 @@ const { data } = await useFetch(`/api/repos/${owner.value}/${name.value}`, {
 
 <template>
   <div
-    class="flex flex-col grow rounded text-sm p-4 bg-zinc-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800"
+    class="not-prose flex grow flex-col border border-slate-200 rounded bg-zinc-50 p-4 text-sm dark:(border-zinc-800 bg-zinc-900)"
   >
-    <div class="inline-flex items-center mb-3">
-      <Icon
-        icon="octicon:repo-16"
-        class="mr-2 text-slate-600 dark:text-zinc-400"
+    <div class="mb-3 inline-flex items-center">
+      <span
+        class="i-octicon-repo-16 mr-2 text-24px text-slate-600 dark:text-zinc-400"
       />
       <NuxtLink
         :to="`https://github.com/${owner}/${name}`"
-        class="text-lg font-semibold leading-tight hover:underline text-blue-600 dark:text-blue-500"
+        class="text-lg font-semibold leading-tight text-blue-600 dark:text-blue-500 hover:underline"
       >
         {{ name }}
       </NuxtLink>
@@ -47,15 +46,13 @@ const { data } = await useFetch(`/api/repos/${owner.value}/${name.value}`, {
       <NuxtLink
         v-if="data?.homepage"
         :to="data.homepage"
-        class="self-start mt-[-3px]"
-      >
-        <IconButton icon="octicon:link-external-16" size="16" />
-      </NuxtLink>
+        class="i-octicon-link-external-16 self-start text-16px icon-btn"
+      />
     </div>
     <div class="grow">
       {{ data?.description }}
     </div>
-    <div class="actions flex items-center mt-2">
+    <div class="actions mt-2 flex items-center">
       <LangDot :color="data?.language" />
       <span class="capitalize">{{ data?.language || "Unknown" }}</span>
 
@@ -63,7 +60,7 @@ const { data } = await useFetch(`/api/repos/${owner.value}/${name.value}`, {
         v-if="data?.license"
         :to="`https://github.com/${owner}/${name}/blob/${data.default_branch}/LICENSE`"
       >
-        <Icon icon="octicon:law-16" size="21" class="ml-4 mr-2" />
+        <span class="i-octicon-law-16 ml-4 mr-2 text-21px" />
         <span>{{ data.license.spdx_id }}</span>
       </NuxtLink>
 
@@ -71,7 +68,7 @@ const { data } = await useFetch(`/api/repos/${owner.value}/${name.value}`, {
         v-if="data?.stargazers_count"
         :to="`https://github.com/${owner}/${name}/stargazers`"
       >
-        <Icon icon="octicon:star-16" size="21" class="ml-4 mr-1" />
+        <span class="i-octicon-star-16 ml-4 mr-1 text-21px" />
         <span>{{ data.stargazers_count }}</span>
       </NuxtLink>
     </div>
@@ -79,15 +76,11 @@ const { data } = await useFetch(`/api/repos/${owner.value}/${name.value}`, {
 </template>
 
 <style lang="postcss" scoped>
-a {
-  @apply no-underline;
-}
-
 .actions > a {
   @apply flex items-center;
 }
 
-.actions > a > svg {
+.actions > a > span[class^="i-"] {
   @apply text-slate-600 dark:text-zinc-400;
 }
 </style>
