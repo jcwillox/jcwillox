@@ -1,6 +1,5 @@
 README.md
 pnpm-lock.yaml
-tsconfig.json
 .nuxt
 .output
 dist
