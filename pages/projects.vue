@@ -1,7 +1,10 @@
 <script setup lang="ts">
-useHead({
-  title: "Projects",
-  meta: [{ name: "description", content: "A portfolio of my projects" }],
+useSeoMeta({
+  title: "Josh's Projects",
+  ogTitle: "Josh's Projects",
+  description: "A portfolio of my projects",
+  ogDescription: "A portfolio of my projects",
+  ogImage: "https://avatars.githubusercontent.com/jcwillox",
 });
 </script>
 

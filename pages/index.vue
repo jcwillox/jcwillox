@@ -1,15 +1,12 @@
 <script setup lang="ts">
 const appConfig = useAppConfig();
 
-useHead({
+useSeoMeta({
   title: "Joshua Cowie-Willox",
-  meta: [
-    { name: "description", content: "My personal showcase website" },
-    {
-      property: "og:image",
-      content: "https://avatars.githubusercontent.com/jcwillox",
-    },
-  ],
+  ogTitle: "Joshua Cowie-Willox",
+  description: "My personal showcase website",
+  ogDescription: "My personal showcase website",
+  ogImage: "https://avatars.githubusercontent.com/jcwillox",
 });
 </script>
 
@@ -36,11 +33,11 @@ useHead({
         />
         <NuxtLink
           :to="appConfig.links.linkedin"
-          class="icon i-line-md-linkedin icon-inline c-[#0a66c2]"
+          class="i-line-md-linkedin icon-inline icon c-[#0a66c2]"
         />
         <NuxtLink
           :to="appConfig.links.kofi"
-          class="icon i-line-md-coffee-half-empty-twotone-loop icon-inline c-[#ff5f5f]"
+          class="i-line-md-coffee-half-empty-twotone-loop icon-inline icon c-[#ff5f5f]"
         />
       </div>
     </Box>
