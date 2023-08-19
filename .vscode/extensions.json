@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "antfu.goto-alias",
+    "antfu.iconify",
+    "antfu.unocss",
+    "christian-kohler.path-intellisense",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "mhutchie.git-graph",
+    "redhat.vscode-yaml",
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin",
+    "cpylua.language-postcss"
+  ]
+}
