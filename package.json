@@ -28,7 +28,7 @@
     "vue": "3.3.7"
   },
   "devDependencies": {
-    "@nuxt/devtools": "0.8.5",
+    "@nuxt/devtools": "1.0.0",
     "@nuxt/eslint-config": "0.2.0",
     "@octokit/openapi-types": "19.0.2",
     "@types/node": "18.18.8",
