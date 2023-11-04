@@ -11,13 +11,10 @@
     "lint:fix": "pnpm run lint --fix",
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
-    "clean": "del-cli .nuxt .output dist"
+    "clean": "nuxt cleanup"
   },
   "dependencies": {
-    "@iconify/vue": "4.1.1",
     "@nuxtjs/color-mode": "3.3.0",
-    "@nuxtjs/google-fonts": "3.0.2",
-    "@nuxtjs/tailwindcss": "6.8.1",
     "@nuxtjs/web-vitals": "0.2.6",
     "@vercel/analytics": "1.1.1",
     "@vercel/kv": "0.2.4",
@@ -28,13 +25,11 @@
     "vue": "3.3.7"
   },
   "devDependencies": {
-    "@nuxt/devtools": "1.0.0",
     "@nuxt/eslint-config": "0.2.0",
     "@octokit/openapi-types": "19.0.2",
     "@types/node": "20.8.10",
     "@unocss/eslint-config": "0.57.1",
     "@unocss/nuxt": "0.57.1",
-    "del-cli": "5.1.0",
     "eslint": "8.52.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-import-resolver-typescript": "3.6.1",

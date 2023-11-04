@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   },
-  devtools: true,
+  devtools: { enabled: true },
   typescript: {
     strict: true,
     typeCheck: true,
