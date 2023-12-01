@@ -14,33 +14,33 @@
     "clean": "nuxt cleanup"
   },
   "dependencies": {
-    "@nuxtjs/color-mode": "3.3.0",
+    "@nuxtjs/color-mode": "3.3.2",
     "@nuxtjs/web-vitals": "0.2.6",
     "@vercel/analytics": "1.1.1",
     "@vercel/kv": "0.2.4",
-    "@vueuse/core": "10.5.0",
-    "@vueuse/nuxt": "10.5.0",
-    "nuxt": "3.8.0",
+    "@vueuse/core": "10.6.1",
+    "@vueuse/nuxt": "10.6.1",
+    "nuxt": "3.8.2",
     "radash": "11.0.0",
-    "vue": "3.3.7"
+    "vue": "3.3.9"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "0.2.0",
-    "@octokit/openapi-types": "19.0.2",
-    "@types/node": "20.8.10",
-    "@unocss/eslint-config": "0.57.1",
-    "@unocss/nuxt": "0.57.1",
-    "eslint": "8.52.0",
+    "@octokit/openapi-types": "19.1.0",
+    "@types/node": "20.10.0",
+    "@unocss/eslint-config": "0.57.7",
+    "@unocss/nuxt": "0.57.7",
+    "eslint": "8.54.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-import": "npm:eslint-plugin-i@2.29.0",
     "eslint-plugin-only-warn": "1.1.0",
     "eslint-plugin-prettier": "5.0.1",
-    "prettier": "3.0.3",
-    "typescript": "5.2.2",
+    "prettier": "3.1.0",
+    "typescript": "5.3.2",
     "vue-tsc": "1.8.22"
   },
-  "packageManager": "pnpm@8.10.0",
+  "packageManager": "pnpm@8.11.0",
   "engines": {
     "node": "^18 || ^20"
   }
