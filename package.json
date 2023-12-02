@@ -17,7 +17,7 @@
     "@nuxtjs/color-mode": "3.3.2",
     "@nuxtjs/web-vitals": "0.2.6",
     "@vercel/analytics": "1.1.1",
-    "@vercel/kv": "0.2.4",
+    "@vercel/kv": "1.0.0",
     "@vueuse/core": "10.6.1",
     "@vueuse/nuxt": "10.6.1",
     "nuxt": "3.8.2",
