@@ -3,13 +3,14 @@
   "eslint.alwaysShowStatus": true,
   "editor.renderWhitespace": "trailing",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
   "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][yaml][html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.formatOnSave": false
-  }
+  },
+  "unocss.remToPxPreview": true
 }

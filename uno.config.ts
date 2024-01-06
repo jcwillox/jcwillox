@@ -17,6 +17,20 @@ export default defineConfig({
     "icon-btn":
       "text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200 text-24px align-middle inline-block",
   },
+  safelist: [
+    "i-logos-python",
+    "i-logos-go",
+    "i-logos-typescript-icon",
+    "i-logos-javascript",
+    "i-logos-vue",
+    "i-vscode-icons-file-type-powershell",
+    "i-logos-java",
+    "i-logos-c",
+    "i-logos-react",
+    "i-logos-lit-icon",
+    "i-logos-vuetifyjs",
+    "i-vscode-icons-file-type-homeassistant",
+  ],
   presets: [
     presetUno(),
     presetAttributify(),
