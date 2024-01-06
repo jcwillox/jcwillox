@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 const props = defineProps<{
   repo: string;
+  title?: string;
+  image?: string;
 }>();
 
 const appConfig = useAppConfig();
@@ -16,71 +18,101 @@ const name = computed(() =>
 
 const { data } = await useFetch(`/api/repos/${owner.value}/${name.value}`, {
   key: `gh-${owner.value}-${name.value}`,
-  pick: [
-    "description",
-    "stargazers_count",
-    "language",
-    "license",
-    "homepage",
-    "default_branch",
-    "html_url",
-  ],
 });
+
+const image = computed(() => {
+  if (props.image?.startsWith("http")) {
+    return props.image;
+  }
+  if (props.image) {
+    return `https://raw.githubusercontent.com/${owner.value}/${name.value}/main/${props.image}`;
+  }
+  if (data.value?.image?.startsWith("https://opengraph.githubassets.com")) {
+    return undefined;
+  }
+  if (data.value?.image) {
+    return data.value.image;
+  }
+});
+
+const hasEmoji = computed(() => data.value && /^\W/.test(data.value.title));
 </script>
 
 <template>
   <div
-    class="not-prose flex grow flex-col border border-slate-200 rounded bg-zinc-50 p-4 text-sm dark:(border-zinc-800 bg-zinc-900)"
+    v-if="data"
+    class="max-w-96 min-w-82 flex flex-col b rd-md bg-neutral-800/60 shadow-lg transition-transform hover:scale-102"
   >
-    <div class="mb-3 inline-flex items-center">
-      <span
-        class="i-octicon-repo-16 mr-2 text-24px text-slate-600 dark:text-zinc-400"
-      />
+    <div class="flex items-center justify-between p-4">
+      <div class="flex flex-col">
+        <div class="flex items-center gap-2 truncate text-lg font-bold">
+          <div
+            v-if="data.icon && !hasEmoji"
+            :class="data.icon"
+            class="shrink-0 text-24px"
+          />
+          {{ title || data.title }}
+          <span
+            v-if="data.new"
+            class="rd-full bg-green-5 px-2 py-0.75 text-xs c-neutral-9 leading-4"
+          >
+            new
+          </span>
+        </div>
+
+        <NuxtLink
+          :to="`https://github.com/${owner}/${name}`"
+          class="mt-1 text-sm text-blue-600 font-medium leading-tight dark:text-blue-500"
+        >
+          {{ owner }}/{{ name }}
+        </NuxtLink>
+      </div>
+
       <NuxtLink
-        :to="`https://github.com/${owner}/${name}`"
-        class="text-lg font-semibold leading-tight text-blue-600 dark:text-blue-500 hover:underline"
-      >
-        {{ name }}
-      </NuxtLink>
-      <div class="grow" />
-      <NuxtLink
-        v-if="data?.homepage"
+        v-if="data.homepage"
         :to="data.homepage"
-        class="i-octicon-link-external-16 self-start text-16px icon-btn"
+        class="i-octicon-home-16 ml-6 mr-2.5 shrink-0 text-20px decoration-none icon-btn"
       />
     </div>
-    <div class="grow">
-      {{ data?.description }}
+
+    <div grow b-t p-4 text-sm>
+      {{ data.description }}
     </div>
-    <div class="actions mt-2 flex items-center">
-      <LangDot :color="data?.language" />
-      <span class="capitalize">{{ data?.language || "Unknown" }}</span>
 
+    <div v-if="image">
+      <NuxtImg
+        :src="image"
+        height="192"
+        fit="contain"
+        loading="lazy"
+        placeholder
+        class="mx-auto h-192px b-t object-scale-down"
+      />
+    </div>
+
+    <div
+      class="flex b-t text-sm divide-x"
+      un-children="flex items-center p-2 basis-1/3 grow justify-center"
+    >
+      <div>
+        <LangDot :color="data.language" />
+        <span class="capitalize">{{ data.language }}</span>
+      </div>
       <NuxtLink
-        v-if="data?.license"
-        :to="`https://github.com/${owner}/${name}/blob/${data.default_branch}/LICENSE`"
+        v-if="data.license"
+        :to="`https://github.com/${owner}/${name}/blob/${data.branch}/LICENSE`"
+        decoration-none
       >
-        <span class="i-octicon-law-16 ml-4 mr-2 text-21px" />
-        <span>{{ data.license.spdx_id }}</span>
+        <div i-octicon-law-16 mr-2 text-21px text-zinc-400 />
+        <span>{{ data.license }}</span>
       </NuxtLink>
-
       <NuxtLink
-        v-if="data?.stargazers_count"
+        v-if="data.stars"
         :to="`https://github.com/${owner}/${name}/stargazers`"
       >
-        <span class="i-octicon-star-16 ml-4 mr-1 text-21px" />
-        <span>{{ data.stargazers_count }}</span>
+        <div i-octicon-star-16 mr-2 text-21px text-zinc-400 />
+        <span>{{ data.stars }}</span>
       </NuxtLink>
     </div>
   </div>
 </template>
-
-<style lang="postcss" scoped>
-.actions > a {
-  @apply flex items-center;
-}
-
-.actions > a > span[class^="i-"] {
-  @apply text-slate-600 dark:text-zinc-400;
-}
-</style>
