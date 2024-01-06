@@ -1,12 +1,11 @@
+import { HOUR_1 } from "./constants";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@vueuse/nuxt", "@unocss/nuxt", "@nuxtjs/color-mode"],
-  css: ["@unocss/reset/tailwind.css"],
+  modules: ["@vueuse/nuxt", "@unocss/nuxt", "@nuxt/image", "nuxt-particles"],
+  css: ["@unocss/reset/tailwind.css", "~/assets/css/global.css"],
   features: {
     inlineStyles: false,
-  },
-  colorMode: {
-    classSuffix: "",
   },
   nitro: {
     storage: {
@@ -17,6 +16,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+  },
+  routeRules: {
+    "/": { isr: HOUR_1 },
   },
   devtools: { enabled: true },
   typescript: {
