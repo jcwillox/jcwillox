@@ -18,7 +18,7 @@ const { data: repos } = await useAsyncData("edge-config-repos", () =>
     <NuxtParticles id="tsparticles" :options="particlesOptions" />
 
     <div
-      class="m-auto mt-4 max-w-lg flex items-center b rd-md bg-neutral-800/60 p-4 px-8 shadow-lg"
+      class="m-auto mt-2 max-w-lg flex items-center b rd-md bg-neutral-800/60 p-4 px-4 shadow-lg sm:mt-4 sm:px-8"
     >
       <NuxtImg
         :src="`https://avatars.githubusercontent.com/${appConfig.socials.github}`"
@@ -56,7 +56,9 @@ const { data: repos } = await useAsyncData("edge-config-repos", () =>
     </div>
 
     <div flex justify-center>
-      <div class="grid grid-cols-1 mt-8 gap-6 lg:grid-cols-3 md:grid-cols-2">
+      <div
+        class="grid grid-cols-1 mt-6 gap-4 lg:grid-cols-3 md:grid-cols-2 sm:mt-8 sm:gap-6"
+      >
         <RepoCard
           v-for="repo in repos"
           :key="isString(repo) ? repo : repo.repo"

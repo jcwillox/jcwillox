@@ -45,7 +45,7 @@ const hasEmoji = computed(() => data.value && /^\W/.test(data.value.title));
   >
     <div class="flex items-center justify-between p-4">
       <div class="flex flex-col">
-        <div class="flex items-center gap-2 truncate text-lg font-bold">
+        <div class="flex items-center gap-2 text-lg font-bold">
           <div
             v-if="data.icon && !hasEmoji"
             :class="data.icon"
@@ -83,10 +83,11 @@ const hasEmoji = computed(() => data.value && /^\W/.test(data.value.title));
       <NuxtImg
         :src="image"
         height="192"
+        width="382"
         fit="contain"
         loading="lazy"
+        class="mx-auto h-192px b-t object-contain"
         placeholder
-        class="mx-auto h-192px b-t object-scale-down"
       />
     </div>
 
