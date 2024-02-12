@@ -100,7 +100,7 @@ const getMetadata = async (owner: string, repo: string) => {
       /<meta property="og:image" content="(.+?)" \/>/,
     )?.[1];
     // extract title
-    const title = data.match(/<\/a>(.+)<\/h1>/)?.[1];
+    const title = data.match(/"level":1,"text":"(.+?)"/)?.[1];
     return { image, title };
   } catch (err) {
     return undefined;
