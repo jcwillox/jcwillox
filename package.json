@@ -16,7 +16,7 @@
   "dependencies": {
     "@nuxtjs/web-vitals": "0.2.6",
     "@vercel/analytics": "1.2.2",
-    "@vercel/edge-config": "0.4.1",
+    "@vercel/edge-config": "1.1.0",
     "@vercel/kv": "1.0.1",
     "@vueuse/core": "10.9.0",
     "@vueuse/nuxt": "10.9.0",
