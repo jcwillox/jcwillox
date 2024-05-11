@@ -1,11 +1,7 @@
-import type { ISourceOptions } from "tsparticles-engine";
+import type { ISourceOptions } from "@tsparticles/engine";
 
 export const particlesOptions = {
   fpsLimit: 40,
-  fullScreen: {
-    enable: true,
-    zIndex: -1,
-  },
   particles: {
     number: {
       value: 200,
