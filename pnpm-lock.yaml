@@ -40,8 +40,8 @@ importers:
         specifier: 1.7.0
         version: 1.7.0(@vercel/kv@1.0.1)(ioredis@5.3.2)(rollup@4.13.2)
       '@octokit/openapi-types':
-        specifier: 20.0.0
-        version: 20.0.0
+        specifier: 22.2.0
+        version: 22.2.0
       '@types/node':
         specifier: 20.12.10
         version: 20.12.10
@@ -689,8 +689,8 @@ packages:
   '@nuxtjs/web-vitals@0.2.7':
     resolution: {integrity: sha512-ztqk+PsdozVExk0IkzH64+5LnHhyUQboIBp/IdDHaOZEHybMZRtdMB53z6OqSg/DCK3638sHDXoza44DYvveaw==}
 
-  '@octokit/openapi-types@20.0.0':
-    resolution: {integrity: sha512-EtqRBEjp1dL/15V7WiX5LJMIxxkdiGJnabzYx5Apx4FkQIFgAfKumXeYAqqJCj1s+BMX4cPFIFC4OLCR6stlnA==}
+  '@octokit/openapi-types@22.2.0':
+    resolution: {integrity: sha512-QBhVjcUa9W7Wwhm6DBFu6ZZ+1/t/oYxqc2tp81Pi41YNuJinbFRx8B133qVOrAaBbF7D/m0Et6f9/pZt9Rc+tg==}
 
   '@parcel/watcher-android-arm64@2.4.1':
     resolution: {integrity: sha512-LOi/WTbbh3aTn2RYddrO8pnapixAziFl6SMxHM69r3tvdSm94JtCenaKgk1GRg5FJ5wpMCpHeW+7yqPlvZv7kg==}
@@ -5839,7 +5839,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@octokit/openapi-types@20.0.0': {}
+  '@octokit/openapi-types@22.2.0': {}
 
   '@parcel/watcher-android-arm64@2.4.1':
     optional: true
