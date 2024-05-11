@@ -15,7 +15,9 @@ const { data: repos } = await useAsyncData("edge-config-repos", () =>
 
 <template>
   <div>
-    <NuxtParticles id="tsparticles" :options="particlesOptions" />
+    <div class="absolute inset-0 -z-1">
+      <NuxtParticles id="tsparticles" :options="particlesOptions" />
+    </div>
 
     <div
       class="m-auto mt-2 max-w-lg flex items-center b rd-md bg-neutral-800/60 p-4 px-4 shadow-lg sm:mt-4 sm:px-8"
