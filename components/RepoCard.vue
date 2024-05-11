@@ -41,7 +41,11 @@ const hasEmoji = computed(() => data.value && /^\W/.test(data.value.title));
 <template>
   <div
     v-if="data"
-    class="max-w-96 min-w-82 flex flex-col b rd-md bg-neutral-800/60 shadow-lg transition-transform hover:scale-102"
+    class="max-w-96 min-w-82 flex flex-col b rd-md shadow-lg transition-transform hover:scale-102"
+    :class="{
+      'b-green-5/50 bg-green-5/10': data.new,
+      'bg-neutral-800/60': !data.new,
+    }"
   >
     <div class="flex items-center justify-between p-4">
       <div class="flex flex-col">
@@ -52,12 +56,6 @@ const hasEmoji = computed(() => data.value && /^\W/.test(data.value.title));
             class="shrink-0 text-24px"
           />
           {{ title || data.title }}
-          <span
-            v-if="data.new"
-            class="rd-full bg-green-5 px-2 py-0.75 text-xs c-neutral-9 leading-4"
-          >
-            new
-          </span>
         </div>
 
         <NuxtLink
