@@ -25,4 +25,14 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: (id) =>
+            id.includes("/@tsparticles/") ? "tsparticles" : undefined,
+        },
+      },
+    },
+  },
 });
