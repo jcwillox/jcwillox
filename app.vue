@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SpeedInsights } from "@vercel/speed-insights/vue";
 useServerHead({
   link: [
     {
@@ -34,6 +35,7 @@ useServerSeoMeta({
 </script>
 
 <template>
+  <SpeedInsights />
   <div class="[--un-default-border-color:#525252] text-white font-sans">
     <NuxtLoadingIndicator />
     <div class="p-4 pb-12 sm:px-12">
