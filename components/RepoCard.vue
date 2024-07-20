@@ -24,6 +24,9 @@ const image = computed(() => {
   if (props.image?.startsWith("http")) {
     return props.image;
   }
+  if (props.image?.startsWith("/")) {
+    return props.image;
+  }
   if (props.image) {
     return `https://raw.githubusercontent.com/${owner.value}/${name.value}/main/${props.image}`;
   }
@@ -82,9 +85,9 @@ const hasEmoji = computed(() => data.value && /^\W/.test(data.value.title));
         :src="image"
         height="192"
         width="382"
-        fit="contain"
+        fit="outside"
         loading="lazy"
-        class="mx-auto h-192px b-t object-contain"
+        class="mx-auto h-192px b-t"
         placeholder
       />
     </div>
