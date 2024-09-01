@@ -22,6 +22,9 @@ rules:
   prefer-const: "warn"
   prettier/prettier: "warn"
   import/newline-after-import: "warn"
+  "@typescript-eslint/no-unused-vars":
+    - "warn"
+    - caughtErrors: "none"
   quotes:
     - "warn"
     - "double"
