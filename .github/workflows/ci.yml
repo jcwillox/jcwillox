@@ -22,5 +22,11 @@ jobs:
       - name: "Install dependencies"
         run: pnpm install
 
+      - name: "Run Lint"
+        run: pnpm run lint
+
+      - name: "Check types"
+        run: pnpm run typecheck
+
       - name: "Check format"
         run: pnpm run format:check
