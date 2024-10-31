@@ -28,7 +28,7 @@
     "@nuxt/eslint-config": "0.5.7",
     "@nuxt/image": "1.8.0",
     "@octokit/openapi-types": "22.2.0",
-    "@types/node": "20.16.10",
+    "@types/node": "22.8.2",
     "@unocss/eslint-config": "0.58.8",
     "@unocss/nuxt": "0.62.4",
     "eslint": "8.57.1",
