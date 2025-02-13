@@ -36,6 +36,7 @@ const image = computed(() => {
   if (data.value?.image) {
     return data.value.image;
   }
+  return "";
 });
 
 const hasEmoji = computed(() => data.value && /^\W/.test(data.value.title));
