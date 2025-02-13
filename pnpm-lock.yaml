@@ -43,8 +43,8 @@ importers:
         specifier: 1.9.0
         version: 1.9.0(@upstash/redis@1.34.3)(@vercel/kv@3.0.0)(ioredis@5.4.1)(magicast@0.3.5)
       '@octokit/openapi-types':
-        specifier: 22.2.0
-        version: 22.2.0
+        specifier: 23.0.1
+        version: 23.0.1
       '@types/node':
         specifier: 22.13.1
         version: 22.13.1
@@ -907,8 +907,8 @@ packages:
   '@nuxtjs/web-vitals@0.2.7':
     resolution: {integrity: sha512-ztqk+PsdozVExk0IkzH64+5LnHhyUQboIBp/IdDHaOZEHybMZRtdMB53z6OqSg/DCK3638sHDXoza44DYvveaw==}
 
-  '@octokit/openapi-types@22.2.0':
-    resolution: {integrity: sha512-QBhVjcUa9W7Wwhm6DBFu6ZZ+1/t/oYxqc2tp81Pi41YNuJinbFRx8B133qVOrAaBbF7D/m0Et6f9/pZt9Rc+tg==}
+  '@octokit/openapi-types@23.0.1':
+    resolution: {integrity: sha512-izFjMJ1sir0jn0ldEKhZ7xegCTj/ObmEDlEfpFrx4k/JyZSMRHbO3/rBwgE7f3m2DHt+RrNGIVw4wSmwnm3t/g==}
 
   '@parcel/watcher-android-arm64@2.5.0':
     resolution: {integrity: sha512-qlX4eS28bUcQCdribHkg/herLe+0A9RyYC+mm2PXpncit8z5b3nSqGVzMNR3CmtAOgRutiZ02eIJJgP/b1iEFQ==}
@@ -6065,7 +6065,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@octokit/openapi-types@22.2.0': {}
+  '@octokit/openapi-types@23.0.1': {}
 
   '@parcel/watcher-android-arm64@2.5.0':
     optional: true
@@ -10812,7 +10812,7 @@ snapshots:
       browserslist: 4.24.2
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.17.1
-      es-module-lexer: 1.5.4
+      es-module-lexer: 1.6.0
       eslint-scope: 5.1.1
       events: 3.3.0
       glob-to-regexp: 0.4.1
