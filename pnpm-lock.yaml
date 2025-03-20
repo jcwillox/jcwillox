@@ -43,8 +43,8 @@ importers:
         specifier: 1.9.0
         version: 1.9.0(@upstash/redis@1.34.4)(@vercel/kv@3.0.0)(db0@0.2.4)(ioredis@5.5.0)(magicast@0.3.5)
       '@octokit/openapi-types':
-        specifier: 23.0.1
-        version: 23.0.1
+        specifier: 24.0.0
+        version: 24.0.0
       '@types/node':
         specifier: 22.13.10
         version: 22.13.10
@@ -752,8 +752,8 @@ packages:
   '@nuxtjs/web-vitals@0.2.7':
     resolution: {integrity: sha512-ztqk+PsdozVExk0IkzH64+5LnHhyUQboIBp/IdDHaOZEHybMZRtdMB53z6OqSg/DCK3638sHDXoza44DYvveaw==}
 
-  '@octokit/openapi-types@23.0.1':
-    resolution: {integrity: sha512-izFjMJ1sir0jn0ldEKhZ7xegCTj/ObmEDlEfpFrx4k/JyZSMRHbO3/rBwgE7f3m2DHt+RrNGIVw4wSmwnm3t/g==}
+  '@octokit/openapi-types@24.0.0':
+    resolution: {integrity: sha512-os8hmzrBPC3PDzXq93/9vBcxMvb90yw2SF76ANon+eP1HzVyd+TshkAkMX6bIm3bY5T3uXieQFDibcc35vM9mQ==}
 
   '@parcel/watcher-android-arm64@2.5.1':
     resolution: {integrity: sha512-KF8+j9nNbUN8vzOFDpRMsaKBHZ/mcjEjMToVMJOhTozkDonQFFrRcfdLWn6yWKCmJKmdVxSgHiYvTCef4/qcBA==}
@@ -5395,7 +5395,7 @@ snapshots:
       - magicast
       - supports-color
 
-  '@octokit/openapi-types@23.0.1': {}
+  '@octokit/openapi-types@24.0.0': {}
 
   '@parcel/watcher-android-arm64@2.5.1':
     optional: true
