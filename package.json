@@ -22,26 +22,26 @@
     "@vueuse/core": "12.8.2",
     "@vueuse/nuxt": "12.8.2",
     "radash": "12.1.0",
-    "vue": "3.5.13"
+    "vue": "3.5.16"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "1.2.0",
-    "@nuxt/image": "1.9.0",
-    "@octokit/openapi-types": "24.0.0",
-    "@types/node": "22.13.10",
+    "@nuxt/eslint-config": "1.4.1",
+    "@nuxt/image": "1.10.0",
+    "@octokit/openapi-types": "24.2.0",
+    "@types/node": "22.15.29",
     "@unocss/eslint-config": "65.5.0",
     "@unocss/nuxt": "65.5.0",
-    "eslint": "9.22.0",
-    "eslint-config-prettier": "10.1.1",
+    "eslint": "9.28.0",
+    "eslint-config-prettier": "10.1.5",
     "eslint-plugin-only-warn": "1.1.0",
-    "eslint-plugin-prettier": "5.2.3",
+    "eslint-plugin-prettier": "5.4.1",
     "nuxt": "3.15.4",
     "nuxt-particles": "0.3.0",
     "prettier": "3.5.3",
-    "typescript": "5.8.2",
-    "vue-tsc": "2.2.8"
+    "typescript": "5.8.3",
+    "vue-tsc": "2.2.10"
   },
-  "packageManager": "pnpm@10.6.4",
+  "packageManager": "pnpm@10.11.1",
   "engines": {
     "node": "^20 || ^22"
   }
