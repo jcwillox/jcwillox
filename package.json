@@ -27,7 +27,7 @@
   "devDependencies": {
     "@nuxt/eslint-config": "1.4.1",
     "@nuxt/image": "1.10.0",
-    "@octokit/openapi-types": "24.2.0",
+    "@octokit/openapi-types": "25.1.0",
     "@types/node": "22.15.29",
     "@unocss/eslint-config": "65.5.0",
     "@unocss/nuxt": "65.5.0",
