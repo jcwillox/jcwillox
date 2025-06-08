@@ -19,8 +19,8 @@
     "@vercel/edge-config": "1.4.0",
     "@vercel/kv": "3.0.0",
     "@vercel/speed-insights": "1.2.0",
-    "@vueuse/core": "12.8.2",
-    "@vueuse/nuxt": "12.8.2",
+    "@vueuse/core": "13.3.0",
+    "@vueuse/nuxt": "13.3.0",
     "radash": "12.1.0",
     "vue": "3.5.16"
   },
