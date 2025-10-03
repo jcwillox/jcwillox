@@ -73,7 +73,7 @@ const hasEmoji = computed(() => data.value && /^\W/.test(data.value.title));
       <NuxtLink
         v-if="data.homepage"
         :to="data.homepage"
-        class="i-octicon-home-16 ml-6 mr-2.5 shrink-0 text-20px decoration-none icon-btn"
+        class="i-octicon-home-16 ml-6 mr-2.5 icon-btn shrink-0 text-20px decoration-none"
       />
     </div>
 
