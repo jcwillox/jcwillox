@@ -35,7 +35,7 @@ export default defineConfig({
     presetUno(),
     presetAttributify(),
     presetTagify(),
-    presetIcons({ cdn: "https://esm.sh/", warn: true }),
+    presetIcons({ warn: true }),
     presetTypography(),
     presetWebFonts({ fonts: { sans: "Inter" } }),
   ],
