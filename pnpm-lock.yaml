@@ -43,8 +43,8 @@ importers:
         specifier: 1.10.0
         version: 1.10.0(@upstash/redis@1.35.0)(@vercel/kv@3.0.0)(db0@0.3.2)(ioredis@5.6.1)(magicast@0.3.5)
       '@octokit/openapi-types':
-        specifier: 25.1.0
-        version: 25.1.0
+        specifier: 26.0.0
+        version: 26.0.0
       '@types/node':
         specifier: 22.15.29
         version: 22.15.29
@@ -660,8 +660,8 @@ packages:
   '@nuxtjs/web-vitals@0.2.7':
     resolution: {integrity: sha512-ztqk+PsdozVExk0IkzH64+5LnHhyUQboIBp/IdDHaOZEHybMZRtdMB53z6OqSg/DCK3638sHDXoza44DYvveaw==}
 
-  '@octokit/openapi-types@25.1.0':
-    resolution: {integrity: sha512-idsIggNXUKkk0+BExUn1dQ92sfysJrje03Q0bv0e+KPLrvyqZF8MnBpFz8UNfYDwB3Ie7Z0TByjWfzxt7vseaA==}
+  '@octokit/openapi-types@26.0.0':
+    resolution: {integrity: sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA==}
 
   '@oxc-parser/binding-darwin-arm64@0.56.5':
     resolution: {integrity: sha512-rj4WZqQVJQgLnGnDu2ciIOC5SqcBPc4x11RN0NwuedSGzny5mtBdNVLwt0+8iB15lIjrOKg5pjYJ8GQVPca5HA==}
@@ -5848,7 +5848,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@octokit/openapi-types@25.1.0': {}
+  '@octokit/openapi-types@26.0.0': {}
 
   '@oxc-parser/binding-darwin-arm64@0.56.5':
     optional: true
