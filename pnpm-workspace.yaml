@@ -1,7 +1,0 @@
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - '@tsparticles/engine'
-  - '@vercel/speed-insights'
-  - esbuild
-  - sharp
-  - unrs-resolver
