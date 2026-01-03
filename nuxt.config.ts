@@ -19,6 +19,12 @@ export default defineNuxtConfig({
     "/l/syslink-ps1": {
       redirect: ghRaw("system-link", "scripts/install-system-link.ps1"),
     },
+    "/l/node-alias": {
+      redirect: ghRaw("node-alias", "scripts/install-node-alias.sh"),
+    },
+    "/l/node-alias-ps1": {
+      redirect: ghRaw("node-alias", "scripts/install-node-alias.ps1"),
+    },
   },
   features: {
     inlineStyles: false,
