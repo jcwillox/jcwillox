@@ -1,7 +1,0 @@
-html {
-  @apply bg-neutral-900 [color-scheme:dark];
-}
-
-*::-webkit-scrollbar {
-  display: none;
-}

@@ -5,8 +5,8 @@
       "type": "npm",
       "script": "dev",
       "problemMatcher": ["$vite"],
-      "label": "npm: dev",
-      "detail": "nuxt dev",
+      "label": "vite: dev",
+      "detail": "vite dev",
       "isBackground": true
     }
   ]
