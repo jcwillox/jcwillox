@@ -46,8 +46,8 @@ importers:
         specifier: 1.11.0
         version: 1.11.0(@upstash/redis@1.35.4)(@vercel/kv@3.0.0)(db0@0.3.4)(ioredis@5.8.0)(magicast@0.3.5)
       '@octokit/openapi-types':
-        specifier: 26.0.0
-        version: 26.0.0
+        specifier: 27.0.0
+        version: 27.0.0
       '@types/node':
         specifier: 22.18.7
         version: 22.18.7
@@ -620,8 +620,8 @@ packages:
   '@nuxtjs/web-vitals@0.2.7':
     resolution: {integrity: sha512-ztqk+PsdozVExk0IkzH64+5LnHhyUQboIBp/IdDHaOZEHybMZRtdMB53z6OqSg/DCK3638sHDXoza44DYvveaw==}
 
-  '@octokit/openapi-types@26.0.0':
-    resolution: {integrity: sha512-7AtcfKtpo77j7Ts73b4OWhOZHTKo/gGY8bB3bNBQz4H+GRSWqx2yvj8TXRsbdTE0eRmYmXOEY66jM7mJ7LzfsA==}
+  '@octokit/openapi-types@27.0.0':
+    resolution: {integrity: sha512-whrdktVs1h6gtR+09+QsNk2+FO+49j6ga1c55YZudfEG+oKJVvJLQi3zkOm5JjiUXAagWK2tI2kTGKJ2Ys7MGA==}
 
   '@oxc-minify/binding-android-arm64@0.86.0':
     resolution: {integrity: sha512-jOgbDgp6A1ax9sxHPRHBxUpxIzp2VTgbZ/6HPKIVUJ7IQqKVsELKFXIOEbCDlb1rUhZZtGf53MFypXf72kR5eQ==}
@@ -5514,7 +5514,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@octokit/openapi-types@26.0.0': {}
+  '@octokit/openapi-types@27.0.0': {}
 
   '@oxc-minify/binding-android-arm64@0.86.0':
     optional: true
