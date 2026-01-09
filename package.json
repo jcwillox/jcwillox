@@ -29,6 +29,7 @@
     "@tanstack/router-plugin": "1.145.4",
     "@vercel/analytics": "1.6.1",
     "@vercel/edge-config": "1.4.3",
+    "@vercel/kv": "3.0.0",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "nitro": "3.0.1-alpha.1",

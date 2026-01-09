@@ -1,8 +1,11 @@
 import { createStorage, type StorageValue } from "unstorage";
 import fsDriver from "unstorage/drivers/fs";
+import vercelKVDriver from "unstorage/drivers/vercel-kv";
 
 const storage = createStorage({
-  driver: fsDriver({ base: "node_modules/.cache/unstorage" }),
+  driver: import.meta.env.DEV
+    ? fsDriver({ base: "node_modules/.cache/unstorage" })
+    : vercelKVDriver({ ttl: 86400, base: "jcwillox-com" }),
 });
 
 export const cacheFn = async <T extends StorageValue>(
