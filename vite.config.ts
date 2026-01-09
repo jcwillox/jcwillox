@@ -5,6 +5,8 @@ import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 import autoImport from "unplugin-auto-import/vite";
 import { defineConfig } from "vite";
+import { imagetools } from "vite-imagetools";
+import lqip from "vite-plugin-lqip";
 import viteTsConfigPaths from "vite-tsconfig-paths";
 
 const ghRaw = (repo: string, path: string) =>
@@ -31,12 +33,15 @@ const config = defineConfig({
     }),
     viteTsConfigPaths({ projects: ["./tsconfig.json"] }),
     tailwindcss(),
-    tanstackStart(),
-    viteReact(),
     autoImport({
+      include: [/\.[tj]sx?(\?[^.\s/]+)?$/],
       dts: "src/types/auto-imports.d.ts",
       imports: ["react"],
     }),
+    tanstackStart(),
+    viteReact(),
+    lqip(),
+    imagetools(),
   ],
 });
 
