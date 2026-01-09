@@ -7,6 +7,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { Analytics } from "@vercel/analytics/react";
 import appCss from "../styles.css?url";
 
 interface RouterContext {
@@ -93,6 +94,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <Analytics />
         <TanStackDevtools
           config={{ position: "bottom-right" }}
           plugins={[
