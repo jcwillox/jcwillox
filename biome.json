@@ -52,6 +52,9 @@
       },
       "a11y": {
         "useAnchorContent": "off"
+      },
+      "nursery": {
+        "useSortedClasses": "warn"
       }
     }
   },

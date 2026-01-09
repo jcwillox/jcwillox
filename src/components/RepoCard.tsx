@@ -33,13 +33,13 @@ export const RepoCard = ({
   return (
     <div
       className={cn(
-        "max-w-96 min-w-82 flex flex-col border border-[#525252] rounded-md shadow-lg transition-transform hover:scale-102",
+        "flex min-w-82 max-w-96 flex-col rounded-md border border-[#525252] shadow-lg transition-transform hover:scale-102",
         props.new ? "border-green-500/50 bg-green-500/10" : "bg-neutral-800/60",
       )}
     >
       <div className="flex items-center justify-between p-4">
         <div className="flex flex-col">
-          <div className="flex items-center gap-2 text-lg font-bold">
+          <div className="flex items-center gap-2 font-bold text-lg">
             {icon && !hasEmoji && (
               <i className={cn(icon, "shrink-0 text-[24px]")} aria-hidden />
             )}
@@ -48,7 +48,7 @@ export const RepoCard = ({
 
           <Link
             to={repoUrl}
-            className="mt-1 text-sm text-blue-600 font-medium leading-tight dark:text-blue-500"
+            className="mt-1 font-medium text-blue-600 text-sm leading-tight dark:text-blue-500"
           >
             {repo}
           </Link>
@@ -57,12 +57,12 @@ export const RepoCard = ({
         {homepage ? (
           <a
             href={homepage}
-            className="i-[octicon--home-16] ml-6 mr-2.5 icon-btn shrink-0 text-[20px] no-underline"
+            className="i-[octicon--home-16] icon-btn mr-2.5 ml-6 shrink-0 text-[20px] no-underline"
           />
         ) : null}
       </div>
 
-      <div className="grow border-t border-[#525252] p-4 text-sm">
+      <div className="grow border-[#525252] border-t p-4 text-sm">
         {description}
       </div>
 
@@ -72,15 +72,15 @@ export const RepoCard = ({
             src={imageUrl}
             alt={title}
             loading="lazy"
-            className="mx-auto h-48 border-t border-[#525252] object-contain w-95.5"
+            className="mx-auto h-48 w-95.5 border-[#525252] border-t object-contain"
           />
         </div>
       ) : null}
 
       <div
         className={cn(
-          "flex border-t border-[#525252] text-sm divide-x divide-[#525252]",
-          "*:flex *:items-center *:justify-center *:p-2 *:basis-1/3 *:grow",
+          "flex divide-x divide-[#525252] border-[#525252] border-t text-sm",
+          "*:flex *:grow *:basis-1/3 *:items-center *:justify-center *:p-2",
         )}
       >
         <div>

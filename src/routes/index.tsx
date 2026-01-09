@@ -36,7 +36,7 @@ function RouteComponent() {
           <ParticlesBackground />
         </ClientOnly>
 
-        <div className="m-auto mt-2 max-w-lg flex items-center border rounded-md bg-neutral-800/60 p-4 px-4 shadow-lg sm:mt-4 sm:px-8 border-[#525252]">
+        <div className="m-auto mt-2 flex max-w-lg items-center rounded-md border border-[#525252] bg-neutral-800/60 p-4 px-4 shadow-lg sm:mt-4 sm:px-8">
           <img
             src={`https://avatars.githubusercontent.com/${appConfig.socials.github}`}
             className="rounded-full bg-contain"
@@ -47,7 +47,7 @@ function RouteComponent() {
           />
 
           <div className="ml-4 grow">
-            <div className="text-sky-700 font-semibold dark:text-sky-500">
+            <div className="font-semibold text-sky-700 dark:text-sky-500">
               {appConfig.fullname}
             </div>
 
@@ -72,7 +72,7 @@ function RouteComponent() {
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 mt-6 gap-4 lg:grid-cols-3 md:grid-cols-2 sm:mt-8 sm:gap-6">
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {data.map((repo) => (
               <RepoCard key={repo.repo} {...repo} />
             ))}
@@ -80,7 +80,7 @@ function RouteComponent() {
         </div>
         <div
           className={cn(
-            "pointer-events-none fixed inset-x-0 bottom-0 h-32 from-black to-transparent bg-linear-to-t transition-transform duration-200",
+            "pointer-events-none fixed inset-x-0 bottom-0 h-32 bg-linear-to-t from-black to-transparent transition-transform duration-200",
             { "translate-y-full": isAtBottom },
           )}
         />

@@ -86,7 +86,7 @@ function RootDocument({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className="font-inter text-white bg-neutral-900 scheme-dark m-0 scrollbar-hide"
+      className="scheme-dark scrollbar-hide m-0 bg-neutral-900 font-inter text-white"
     >
       <head>
         <HeadContent />
