@@ -4,7 +4,7 @@ const socials = {
   linkedin: "joshua-cowie-willox",
 };
 
-export default defineAppConfig({
+export const appConfig = Object.freeze({
   fullname: "Joshua Cowie-Willox",
   socials,
   links: {

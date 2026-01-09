@@ -1,4 +1,4 @@
-import type { ISourceOptions } from "@tsparticles/engine";
+import type { IParticlesProps } from "@tsparticles/react";
 
 export const particlesOptions = {
   fpsLimit: 40,
@@ -36,4 +36,4 @@ export const particlesOptions = {
   background: {
     image: "radial-gradient(#4a0000, #000)",
   },
-} satisfies ISourceOptions;
+} satisfies IParticlesProps["options"];

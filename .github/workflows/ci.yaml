@@ -8,13 +8,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout the repository"
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v6
+
+      - name: "Setup Biome"
+        uses: biomejs/setup-biome@v2
+
+      - name: "Run Biome"
+        run: biome ci .
+
+  typecheck:
+    name: "Typecheck"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout the repository"
+        uses: actions/checkout@v6
 
       - name: "Setup pnpm"
-        uses: pnpm/action-setup@v4.1.0
+        uses: pnpm/action-setup@v4
 
       - name: "Setup node"
-        uses: actions/setup-node@v5.0.0
+        uses: actions/setup-node@v6
         with:
           node-version-file: package.json
           cache: "pnpm"
@@ -22,11 +35,5 @@ jobs:
       - name: "Install dependencies"
         run: pnpm install
 
-      - name: "Run Lint"
-        run: pnpm run lint
-
       - name: "Check types"
         run: pnpm run typecheck
-
-      - name: "Check format"
-        run: pnpm run format:check
