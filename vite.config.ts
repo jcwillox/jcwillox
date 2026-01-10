@@ -1,3 +1,4 @@
+import { resolve } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
@@ -5,14 +6,11 @@ import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 import autoImport from "unplugin-auto-import/vite";
 import { defineConfig } from "vite";
-import { imagetools } from "vite-imagetools";
-import lqip from "vite-plugin-lqip";
-import viteTsConfigPaths from "vite-tsconfig-paths";
 
 const ghRaw = (repo: string, path: string) =>
   `https://github.com/jcwillox/${repo}/raw/main/${path}`;
 
-const config = defineConfig({
+export default defineConfig({
   plugins: [
     devtools(),
     nitro({
@@ -31,18 +29,20 @@ const config = defineConfig({
         },
       },
     }),
-    viteTsConfigPaths({ projects: ["./tsconfig.json"] }),
     tailwindcss(),
     autoImport({
       include: [/\.[tj]sx?(\?[^.\s/]+)?$/],
       dts: "src/types/auto-imports.d.ts",
+      dtsMode: "overwrite",
       imports: ["react"],
+      ignore: ["cache"],
     }),
     tanstackStart(),
     viteReact(),
-    lqip(),
-    imagetools(),
   ],
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "./src"),
+    },
+  },
 });
-
-export default config;

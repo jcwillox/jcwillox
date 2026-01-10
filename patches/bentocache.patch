@@ -1,0 +1,67 @@
+diff --git a/build/bento_cache-Bju9KqIx.d.ts b/build/bento_cache-Bju9KqIx.d.ts
+index 4b69842c25d0f20562ea39991b7ddb0e7e3d103b..3bda28ea92d06ed457e3f102bfac91f9d85c18dc 100644
+--- a/build/bento_cache-Bju9KqIx.d.ts
++++ b/build/bento_cache-Bju9KqIx.d.ts
+@@ -562,6 +562,21 @@ type RawBentoCacheOptions = {
+      * Custom serializer
+      */
+     serializer?: CacheSerializer;
++    /**
++     * A function to register background tasks in serverless environments.
++     * This is needed for SWR (Stale-While-Revalidate) to work properly in
++     * serverless platforms like Vercel, Cloudflare Workers, etc.
++     *
++     * Example with Vercel:
++     * ```ts
++     * import { waitUntil } from '@vercel/functions'
++     *
++     * const bento = new BentoCache({
++     *   waitUntil: waitUntil
++     * })
++     * ```
++     */
++    waitUntil?: (promise: Promise<unknown>) => void;
+ } & Omit<RawCommonOptions, 'tags' | 'skipBusNotify' | 'skipL2Write'>;
+ /**
+  * The options that can be passed when creating
+diff --git a/build/index.js b/build/index.js
+index 8ebad6e595bfd80b05a14c5d2d129a584bddf792..5145322085c865cf54af281a48ee116500934990 100644
+--- a/build/index.js
++++ b/build/index.js
+@@ -198,7 +198,8 @@ var FactoryRunner = class {
+       this.#stack.logger.info({ cache: this.#stack.name, opId: options.id, key }, "running factory");
+     }
+     if (options.shouldSwr(hasGracedValue)) {
+-      this.#runFactory({ key, factory, options, lockReleaser, isBackground: true });
++      const promise = this.#runFactory({ key, factory, options, lockReleaser, isBackground: true });
++      this.#stack.options.waitUntil?.(promise)
+       throw new errors.E_FACTORY_SOFT_TIMEOUT(key);
+     }
+     const runFactory = this.#runFactory({ key, factory, options, lockReleaser, gracedValue });
+@@ -209,6 +210,7 @@ var FactoryRunner = class {
+           { cache: this.#stack.name, opId: options.id, key },
+           `factory timed out after ${timeout?.duration}ms`
+         );
++        this.#stack.options.waitUntil?.(runFactory);
+         throw new timeout.exception(key);
+       }
+     });
+@@ -1713,6 +1715,10 @@ var BentoCacheOptions = class _BentoCacheOptions {
+    */
+   serializeL1 = true;
+   onFactoryError;
++  /**
++   * A function to register background tasks in serverless environments
++   */
++  waitUntil;
+   constructor(options) {
+     this.#options = { ...this, ...options };
+     this.prefix = this.#options.prefix;
+@@ -1728,6 +1734,7 @@ var BentoCacheOptions = class _BentoCacheOptions {
+     this.l2CircuitBreakerDuration = resolveTtl(this.#options.l2CircuitBreakerDuration, null);
+     this.logger = new Logger(this.#options.logger ?? noopLogger());
+     this.onFactoryError = this.#options.onFactoryError;
++    this.waitUntil = this.#options.waitUntil;
+   }
+   serializeL1Cache(shouldSerialize = true) {
+     this.serializeL1 = shouldSerialize;

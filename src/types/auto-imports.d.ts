@@ -9,7 +9,6 @@ declare global {
   const Activity: typeof import('react').Activity
   const Fragment: typeof import('react').Fragment
   const Suspense: typeof import('react').Suspense
-  const cache: typeof import('react').cache
   const cacheSignal: typeof import('react').cacheSignal
   const createContext: typeof import('react').createContext
   const createRef: typeof import('react').createRef

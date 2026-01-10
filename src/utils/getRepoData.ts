@@ -4,8 +4,8 @@ import { title } from "radashi";
 import { z } from "zod";
 import { appConfig } from "@/config/appConfig.ts";
 import { MONTH_6 } from "@/constants";
+import { getRepo } from "@/libs/github.ts";
 import { getMetadata } from "./getRepoMetadata.ts";
-import { getRepo } from "./github.ts";
 
 export const getRepoData = createServerFn()
   .inputValidator(

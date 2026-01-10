@@ -4,7 +4,7 @@ import { RepoCard } from "@/components/RepoCard.tsx";
 import { appConfig } from "@/config/appConfig.ts";
 import { getEdgeConfig } from "@/config/edgeConfig.ts";
 import { useNearBottom } from "@/hooks/useNearBottom.ts";
-import { cn } from "@/lib/utils.ts";
+import { cn } from "@/utils/common.ts";
 import { getRepoData } from "@/utils/getRepoData.ts";
 
 export const Route = createFileRoute("/")({
