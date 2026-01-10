@@ -32,11 +32,6 @@ class UpstashDriver extends BaseDriver implements L2CacheDriver {
 
   async get(key: string): Promise<string | undefined> {
     const result = await this.client.get(this.getItemKey(key));
-    console.log("get", {
-      key: this.getItemKey(key),
-      result,
-      type: typeof result,
-    });
     return isString(result) ? result : undefined;
   }
 
@@ -47,7 +42,6 @@ class UpstashDriver extends BaseDriver implements L2CacheDriver {
 
   async set(key: string, value: string, ttl?: number): Promise<boolean> {
     const itemKey = this.getItemKey(key);
-    console.log("set", { itemKey, value, type: typeof value, ttl });
     const result = ttl
       ? await this.client.set(itemKey, value, { px: ttl })
       : await this.client.set(itemKey, value);

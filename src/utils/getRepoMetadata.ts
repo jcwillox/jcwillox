@@ -21,9 +21,6 @@ const getIcon = async (
 ) =>
   bento.getOrSet({
     key: `getIcon:${repo}/${branch}:${language}`,
-    ttl: "1h",
-    grace: "1d",
-    timeout: "250ms",
     factory: async () => {
       // attempt to get dependencies from package.json
       const deps = await getDependencies(repo, branch);
