@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { cn } from "@/lib/utils.ts";
+import { cn } from "@/utils/common.ts";
 import type { getRepoData } from "@/utils/getRepoData.ts";
 import { LangDot } from "./LangDot.tsx";
 
