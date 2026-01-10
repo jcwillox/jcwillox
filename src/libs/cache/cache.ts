@@ -3,6 +3,7 @@ import { waitUntil } from "@vercel/functions";
 import { BentoCache, bentostore } from "bentocache";
 import { fileDriver } from "bentocache/drivers/file";
 import { pino } from "pino";
+import { PinoPretty as pretty } from "pino-pretty";
 import { upstashDriver } from "./upstashDriver.ts";
 
 export const bento = new BentoCache({
@@ -11,10 +12,7 @@ export const bento = new BentoCache({
     console.log("waitUntil waiting for promise");
     return waitUntil(promise);
   },
-  logger: pino({
-    level: "debug",
-    transport: import.meta.env.DEV ? { target: "pino-pretty" } : undefined,
-  }),
+  logger: pino({ level: "debug" }, pretty()),
   stores: {
     upstash: bentostore().useL2Layer(
       upstashDriver({ prefix: "jcwillox-com:bentocache" }),

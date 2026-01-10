@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/correctness/useHookAtTopLevel: <explanation> */
 import { Redis } from "@upstash/redis";
 import { BaseDriver } from "bentocache/drivers/base_driver";
 import type {

@@ -4,7 +4,7 @@ import { title } from "radashi";
 import { z } from "zod";
 import { appConfig } from "@/config/appConfig.ts";
 import { MONTH_6 } from "@/constants";
-import { getRepo } from "../libs/github.ts";
+import { getRepo } from "@/libs/github.ts";
 import { getMetadata } from "./getRepoMetadata.ts";
 
 export const getRepoData = createServerFn()

@@ -58,9 +58,6 @@ importers:
       '@vercel/functions':
         specifier: 3.3.5
         version: 3.3.5
-      '@vercel/kv':
-        specifier: 3.0.0
-        version: 3.0.0
       bentocache:
         specifier: 1.6.0
         version: 1.6.0(patch_hash=0067fe1b746928c5874951ff8809a435dca587644ea522715a51da1d34170a96)(ioredis@5.9.1)
@@ -72,7 +69,7 @@ importers:
         version: 2.1.1
       nitro:
         specifier: 3.0.1-alpha.1
-        version: 3.0.1-alpha.1(@upstash/redis@1.36.1)(@vercel/functions@3.3.5)(@vercel/kv@3.0.0)(chokidar@4.0.3)(ioredis@5.9.1)(lru-cache@11.2.4)(rollup@4.54.0)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))
+        version: 3.0.1-alpha.1(@upstash/redis@1.36.1)(@vercel/functions@3.3.5)(chokidar@4.0.3)(ioredis@5.9.1)(lru-cache@11.2.4)(rollup@4.54.0)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))
       pino:
         specifier: 10.1.1
         version: 10.1.1
@@ -1457,10 +1454,6 @@ packages:
     peerDependenciesMeta:
       '@aws-sdk/credential-provider-web-identity':
         optional: true
-
-  '@vercel/kv@3.0.0':
-    resolution: {integrity: sha512-pKT8fRnfyYk2MgvyB6fn6ipJPCdfZwiKDdw7vB+HL50rjboEBHDVBEcnwfkEpVSp2AjNtoaOUH7zG+bVC/rvSg==}
-    engines: {node: '>=14.6'}
 
   '@vercel/oidc@3.1.0':
     resolution: {integrity: sha512-Fw28YZpRnA3cAHHDlkt7xQHiJ0fcL+NRcIqsocZQUSmbzeIKRpwttJjik5ZGanXP+vlA4SbTg+AbA3bP363l+w==}
@@ -3918,10 +3911,6 @@ snapshots:
     dependencies:
       '@vercel/oidc': 3.1.0
 
-  '@vercel/kv@3.0.0':
-    dependencies:
-      '@upstash/redis': 1.36.1
-
   '@vercel/oidc@3.1.0': {}
 
   '@vitejs/plugin-react@5.1.2(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))':
@@ -4456,7 +4445,7 @@ snapshots:
 
   nf3@0.1.12: {}
 
-  nitro@3.0.1-alpha.1(@upstash/redis@1.36.1)(@vercel/functions@3.3.5)(@vercel/kv@3.0.0)(chokidar@4.0.3)(ioredis@5.9.1)(lru-cache@11.2.4)(rollup@4.54.0)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)):
+  nitro@3.0.1-alpha.1(@upstash/redis@1.36.1)(@vercel/functions@3.3.5)(chokidar@4.0.3)(ioredis@5.9.1)(lru-cache@11.2.4)(rollup@4.54.0)(vite@7.3.0(@types/node@24.10.4)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)):
     dependencies:
       consola: 3.4.2
       crossws: 0.4.1(srvx@0.9.8)
@@ -4471,7 +4460,7 @@ snapshots:
       srvx: 0.9.8
       undici: 7.16.0
       unenv: 2.0.0-rc.24
-      unstorage: 2.0.0-alpha.4(@upstash/redis@1.36.1)(@vercel/functions@3.3.5)(@vercel/kv@3.0.0)(chokidar@4.0.3)(db0@0.3.4)(ioredis@5.9.1)(lru-cache@11.2.4)(ofetch@2.0.0-alpha.3)
+      unstorage: 2.0.0-alpha.4(@upstash/redis@1.36.1)(@vercel/functions@3.3.5)(chokidar@4.0.3)(db0@0.3.4)(ioredis@5.9.1)(lru-cache@11.2.4)(ofetch@2.0.0-alpha.3)
     optionalDependencies:
       rollup: 4.54.0
       vite: 7.3.0(@types/node@24.10.4)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)
@@ -4905,11 +4894,10 @@ snapshots:
       picomatch: 4.0.3
       webpack-virtual-modules: 0.6.2
 
-  unstorage@2.0.0-alpha.4(@upstash/redis@1.36.1)(@vercel/functions@3.3.5)(@vercel/kv@3.0.0)(chokidar@4.0.3)(db0@0.3.4)(ioredis@5.9.1)(lru-cache@11.2.4)(ofetch@2.0.0-alpha.3):
+  unstorage@2.0.0-alpha.4(@upstash/redis@1.36.1)(@vercel/functions@3.3.5)(chokidar@4.0.3)(db0@0.3.4)(ioredis@5.9.1)(lru-cache@11.2.4)(ofetch@2.0.0-alpha.3):
     optionalDependencies:
       '@upstash/redis': 1.36.1
       '@vercel/functions': 3.3.5
-      '@vercel/kv': 3.0.0
       chokidar: 4.0.3
       db0: 0.3.4
       ioredis: 5.9.1
