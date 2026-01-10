@@ -19,6 +19,7 @@ declare global {
 
   interface ImportMetaEnv {
     readonly VITE_EDGE_CONFIG: string;
+    readonly GITHUB_TOKEN: string;
   }
 }
 
