@@ -47,6 +47,8 @@ export const Route = createRootRouteWithContext<RouterContext>()({
         content: "https://avatars.githubusercontent.com/jcwillox",
       },
       { name: "twitter:url", content: "https://jcwillox.com" },
+      { name: "twitter:card", content: "summary" },
+      { name: "og:site_name", content: "Joshua Cowie-Willox" },
     ],
     links: [
       {
