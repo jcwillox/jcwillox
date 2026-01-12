@@ -47,7 +47,6 @@ export const bento = new BentoCache({
   },
   ttl: import.meta.env.PROD ? "1h" : "1d",
   grace: import.meta.env.PROD ? "1d" : undefined,
-  timeout: import.meta.env.PROD ? "250ms" : undefined,
 });
 
 if (bento.defaultStoreName === "filesystem") {
