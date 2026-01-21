@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
+    "dev": "NODE_OPTIONS='--import ./instrument.server.mjs' vite dev",
+    "build": "vite build && cp instrument.server.mjs .output/server",
     "preview": "vite preview",
     "typecheck": "tsc",
     "lint": "biome lint",
@@ -13,11 +13,13 @@
     "format:check": "biome format",
     "check": "biome check",
     "check:write": "biome check --write",
-    "clean": "del-cli dist .tanstack .output .vercel"
+    "clean": "del-cli dist .tanstack .output .vercel",
+    "start": "node --import ./.output/server/instrument.server.mjs .output/server/index.mjs"
   },
   "dependencies": {
     "@octokit/rest": "22.0.1",
     "@react-hookz/web": "25.2.0",
+    "@sentry/tanstackstart-react": "10.35.0",
     "@tailwindcss/vite": "4.1.18",
     "@tanstack/react-devtools": "0.9.0",
     "@tanstack/react-query": "5.90.16",

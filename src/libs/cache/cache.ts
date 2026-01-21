@@ -1,4 +1,5 @@
 /** biome-ignore-all lint/correctness/useHookAtTopLevel: not hooks */
+import "./tracing.ts";
 import { waitUntil } from "@vercel/functions";
 import { BentoCache, bentostore } from "bentocache";
 import { fileDriver } from "bentocache/drivers/file";

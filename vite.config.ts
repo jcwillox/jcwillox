@@ -1,4 +1,5 @@
 import { resolve } from "node:path";
+import { sentryTanstackStart } from "@sentry/tanstackstart-react";
 import tailwindcss from "@tailwindcss/vite";
 import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
@@ -39,6 +40,11 @@ export default defineConfig({
     }),
     tanstackStart(),
     viteReact(),
+    sentryTanstackStart({
+      org: "jcwillox",
+      project: "jcwillox",
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+    }),
   ],
   resolve: {
     alias: {

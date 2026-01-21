@@ -1,4 +1,5 @@
 onlyBuiltDependencies:
+  - '@sentry/cli'
   - esbuild
   - sharp
 
@@ -6,3 +7,5 @@ patchedDependencies:
   bentocache: patches/bentocache.patch
 
 saveExact: true
+
+shellEmulator: true

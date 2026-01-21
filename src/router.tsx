@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/tanstackstart-react";
 import { QueryClient } from "@tanstack/react-query";
 import { createRouter } from "@tanstack/react-router";
 import { setupRouterSsrQueryIntegration } from "@tanstack/react-router-ssr-query";
@@ -15,6 +16,16 @@ export function getRouter() {
   });
 
   setupRouterSsrQueryIntegration({ router, queryClient });
+
+  if (!router.isServer) {
+    Sentry.init({
+      dsn: import.meta.env.VITE_SENTRY_DSN,
+      integrations: [Sentry.tanstackRouterBrowserTracingIntegration(router)],
+      tracesSampleRate: 1.0,
+      tracePropagationTargets: ["localhost", /^https:\/\/jcwillox\.com\/api/],
+      sendDefaultPii: true,
+    });
+  }
 
   return router;
 }
