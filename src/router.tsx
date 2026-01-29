@@ -21,7 +21,7 @@ export function getRouter() {
     Sentry.init({
       dsn: import.meta.env.VITE_SENTRY_DSN,
       integrations: [Sentry.tanstackRouterBrowserTracingIntegration(router)],
-      tracesSampleRate: 1.0,
+      tracesSampleRate: 0.2,
       tracePropagationTargets: ["localhost", /^https:\/\/jcwillox\.com\/api/],
       sendDefaultPii: true,
     });
