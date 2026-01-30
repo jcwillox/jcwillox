@@ -25,10 +25,13 @@ export const bento = new BentoCache({
   grace: import.meta.env.PROD ? "1d" : undefined,
 });
 
-bento.on("cache:hit", (info) => {
+bento.on("cache:hit", ({ value, ...info }) => {
   const span = Sentry.getActiveSpan();
   if (span) {
-    log.info({ info }, "[cache:hit] recording cache hit in span");
+    log.info(
+      { info, span: span.spanContext() },
+      "[cache:hit] recording cache hit in span",
+    );
     // span.setAttribute("cache.hit", true);
     // span.setAttribute("cache.key", info.key);
     // span.setAttribute("cache.store", info.store);
@@ -41,19 +44,22 @@ if (bento.defaultStoreName === "filesystem") {
   bento.prune().then(() => log.info("pruned filesystem cache"));
 }
 
-const getOrSet = bento.getOrSet;
-bento.getOrSet = <T>(options: GetOrSetOptions<T>): Promise<T> =>
-  Sentry.startSpan(
-    {
-      name: `${options.key}`,
-      op: "bento.getOrSet",
-      attributes: {
-        "cache.key": options.key,
+bento.getOrSet = new Proxy(bento.getOrSet.bind(bento), {
+  apply: (target, _thisArg, args) => {
+    const [options] = args as [GetOrSetOptions<unknown>];
+    return Sentry.startSpan(
+      {
+        name: `${options.key}`,
+        op: "bento.getOrSet",
+        attributes: {
+          "cache.key": options.key,
+        },
       },
-    },
-    async (span) => {
-      const res = await getOrSet(options);
-      span.setAttribute("cache.item_size", JSON.stringify(res).length);
-      return res;
-    },
-  );
+      async (span) => {
+        const res = await target(options);
+        span.setAttribute("cache.item_size", JSON.stringify(res).length);
+        return res;
+      },
+    );
+  },
+});
