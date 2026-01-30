@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "NODE_OPTIONS='--import ./instrument.server.mjs' vite dev",
-    "build": "vite build && cp instrument.server.mjs .vercel/output",
+    "dev": "vite dev",
+    "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc",
     "lint": "biome lint",
@@ -13,8 +13,7 @@
     "format:check": "biome format",
     "check": "biome check",
     "check:write": "biome check --write",
-    "clean": "del-cli dist .tanstack .output .vercel",
-    "start": "node --import ./.output/server/instrument.server.mjs .output/server/index.mjs"
+    "clean": "del-cli dist .tanstack .output .vercel"
   },
   "dependencies": {
     "@octokit/rest": "22.0.1",
