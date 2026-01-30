@@ -3,43 +3,17 @@ import "./tracing.ts";
 import { waitUntil } from "@vercel/functions";
 import { BentoCache, bentostore } from "bentocache";
 import { fileDriver } from "bentocache/drivers/file";
-import { pino } from "pino";
-import pretty from "pino-pretty";
+import type { GetOrSetOptions } from "bentocache/types";
+import { log } from "../logging.ts";
 import { upstashDriver } from "./upstashDriver.ts";
-
-const dtf = new Intl.DateTimeFormat("sv-SE", {
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-  hour: "2-digit",
-  minute: "2-digit",
-  second: "2-digit",
-  fractionalSecondDigits: 3,
-  timeZoneName: "longOffset",
-  timeZone: "Australia/Sydney",
-});
-
-const logger = pino(
-  {
-    level: "debug",
-    ...(import.meta.env.PROD
-      ? {
-          base: null,
-          formatters: { level: (label) => ({ level: label }) },
-          timestamp: () => `,"time":"${dtf.format().replaceAll(" GMT", "")}"`,
-        }
-      : {}),
-  },
-  import.meta.env.DEV ? pretty({ ignore: "pid,hostname" }) : undefined,
-);
 
 export const bento = new BentoCache({
   default: import.meta.env.DEV ? "filesystem" : "upstash",
   waitUntil: (promise) => {
-    logger.info("[waitUntil] waiting for promise");
+    log.info("[waitUntil] waiting for promise");
     return waitUntil(promise);
   },
-  logger,
+  logger: log,
   stores: {
     upstash: bentostore().useL2Layer(upstashDriver({ prefix: "jcwillox" })),
     filesystem: bentostore().useL2Layer(
@@ -51,5 +25,5 @@ export const bento = new BentoCache({
 });
 
 if (bento.defaultStoreName === "filesystem") {
-  bento.prune().then(() => logger.info("pruned filesystem cache"));
+  bento.prune().then(() => log.info("pruned filesystem cache"));
 }
