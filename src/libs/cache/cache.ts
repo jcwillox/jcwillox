@@ -32,11 +32,26 @@ bento.on("cache:hit", ({ value, ...info }) => {
       { info, span: span.spanContext() },
       "[cache:hit] recording cache hit in span",
     );
-    // span.setAttribute("cache.hit", true);
-    // span.setAttribute("cache.key", info.key);
-    // span.setAttribute("cache.store", info.store);
-    // span.setAttribute("cache.tier", info.layer);
-    // span.setAttribute("cache.graced", info.graced);
+    span.setAttribute("bento.event", "cache:hit");
+    span.setAttribute("cache.hit", true);
+    span.setAttribute("cache.key", info.key);
+    span.setAttribute("cache.store", info.store);
+    span.setAttribute("cache.tier", info.layer);
+    span.setAttribute("cache.graced", info.graced);
+  }
+});
+
+bento.on("cache:miss", (info) => {
+  const span = Sentry.getActiveSpan();
+  if (span) {
+    log.info(
+      { info, span: span.spanContext() },
+      "[cache:miss] recording cache miss in span",
+    );
+    span.setAttribute("bento.event", "cache:miss");
+    span.setAttribute("cache.hit", false);
+    span.setAttribute("cache.key", info.key);
+    span.setAttribute("cache.store", info.store);
   }
 });
 

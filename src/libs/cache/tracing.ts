@@ -5,6 +5,8 @@ import { log } from "@/libs/logging.ts";
 const spans = new WeakMap<CacheOperationMessage, Sentry.Span>();
 
 const start = (message: CacheOperationMessage) => {
+  if (spans.has(message)) return;
+
   const name = message.key ?? message.keys?.join(",");
   const operation =
     message.operation === "set"
@@ -33,6 +35,7 @@ const end = (message: CacheOperationMessage) => {
     log.error({ message }, "No span found for cache operation end");
     return;
   }
+  if (!span.isRecording()) return;
 
   if (message.hit !== undefined) {
     span.setAttribute("cache.hit", message.hit);

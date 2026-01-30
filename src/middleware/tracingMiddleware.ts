@@ -13,6 +13,7 @@ export const tracingMiddleware = createMiddleware().server(
           "http.method": request.method,
           "http.url": request.url,
           "http.route": url.pathname,
+          "middleware.name": "tracingMiddleware",
         },
       },
       async (span) => {
