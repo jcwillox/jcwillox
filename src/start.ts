@@ -1,8 +1,12 @@
 import { createStart } from "@tanstack/react-start";
-import { tracingMiddleware } from "@/middleware/tracingMiddleware.ts";
+import {
+  getFunctionTracingMiddleware,
+  getTracingMiddleware,
+} from "@/middleware/tracingMiddleware.ts";
 
 export const startInstance = createStart(() => {
   return {
-    requestMiddleware: [tracingMiddleware],
+    requestMiddleware: [getTracingMiddleware()],
+    functionMiddleware: [getFunctionTracingMiddleware()],
   };
 });

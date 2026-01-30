@@ -29,3 +29,24 @@ export const tracingMiddleware = createMiddleware().server(
     );
   },
 );
+
+const functionTracingMiddleware = createMiddleware({ type: "function" }).server(
+  ({ next, method, serverFnMeta }) => {
+    return Sentry.startSpan(
+      {
+        name: `functionTracingMiddleware:${method} ${serverFnMeta.name}`,
+        op: "tracingMiddleware.function.server",
+        attributes: {
+          "tanstackstart.function.name": serverFnMeta.name,
+          "tanstackstart.function.id": serverFnMeta.id,
+          "http.method": method,
+          "middleware.name": "functionTracingMiddleware",
+        },
+      },
+      () => next(),
+    );
+  },
+);
+
+export const getTracingMiddleware = () => tracingMiddleware;
+export const getFunctionTracingMiddleware = () => functionTracingMiddleware;
