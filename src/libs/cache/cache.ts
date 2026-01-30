@@ -1,5 +1,6 @@
 /** biome-ignore-all lint/correctness/useHookAtTopLevel: not hooks */
 import "./tracing.ts";
+import * as Sentry from "@sentry/tanstackstart-react";
 import { waitUntil } from "@vercel/functions";
 import { BentoCache, bentostore } from "bentocache";
 import { fileDriver } from "bentocache/drivers/file";
@@ -24,6 +25,35 @@ export const bento = new BentoCache({
   grace: import.meta.env.PROD ? "1d" : undefined,
 });
 
+bento.on("cache:hit", (info) => {
+  const span = Sentry.getActiveSpan();
+  if (span) {
+    log.info({ info }, "[cache:hit] recording cache hit in span");
+    // span.setAttribute("cache.hit", true);
+    // span.setAttribute("cache.key", info.key);
+    // span.setAttribute("cache.store", info.store);
+    // span.setAttribute("cache.tier", info.layer);
+    // span.setAttribute("cache.graced", info.graced);
+  }
+});
+
 if (bento.defaultStoreName === "filesystem") {
   bento.prune().then(() => log.info("pruned filesystem cache"));
 }
+
+const getOrSet = bento.getOrSet;
+bento.getOrSet = <T>(options: GetOrSetOptions<T>): Promise<T> =>
+  Sentry.startSpan(
+    {
+      name: `${options.key}`,
+      op: "bento.getOrSet",
+      attributes: {
+        "cache.key": options.key,
+      },
+    },
+    async (span) => {
+      const res = await getOrSet(options);
+      span.setAttribute("cache.item_size", JSON.stringify(res).length);
+      return res;
+    },
+  );

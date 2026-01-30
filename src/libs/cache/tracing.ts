@@ -1,5 +1,6 @@
 import * as Sentry from "@sentry/tanstackstart-react";
 import { type CacheOperationMessage, tracingChannels } from "bentocache";
+import { log } from "@/libs/logging.ts";
 
 const spans = new WeakMap<CacheOperationMessage, Sentry.Span>();
 
@@ -28,7 +29,10 @@ const start = (message: CacheOperationMessage) => {
 
 const end = (message: CacheOperationMessage) => {
   const span = spans.get(message);
-  if (!span) return;
+  if (!span) {
+    log.error({ message }, "No span found for cache operation end");
+    return;
+  }
 
   if (message.hit !== undefined) {
     span.setAttribute("cache.hit", message.hit);
