@@ -7,8 +7,8 @@ export const tracingMiddleware = createMiddleware().server(
 
     return Sentry.startSpan(
       {
-        name: `tracingMiddleware:${request.method} ${url.pathname}`,
-        op: "tracingMiddleware.http.server",
+        name: `${request.method} ${url.pathname}`,
+        op: "http.server",
         attributes: {
           "http.method": request.method,
           "http.url": request.url,
@@ -34,8 +34,8 @@ const functionTracingMiddleware = createMiddleware({ type: "function" }).server(
   ({ next, method, serverFnMeta }) => {
     return Sentry.startSpan(
       {
-        name: `functionTracingMiddleware:${method} ${serverFnMeta.name}`,
-        op: "tracingMiddleware.function.server",
+        name: `${method} ${serverFnMeta.name}`,
+        op: "function.server",
         attributes: {
           "tanstackstart.function.name": serverFnMeta.name,
           "tanstackstart.function.id": serverFnMeta.id,
