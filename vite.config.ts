@@ -28,6 +28,12 @@ export default defineConfig({
         "/l/node-alias-ps1": {
           redirect: ghRaw("node-alias", "scripts/install-node-alias.ps1"),
         },
+        "/l/dotbot": {
+          redirect: ghRaw("dotbot", "scripts/install-dotbot.sh"),
+        },
+        "/l/dotbot-ps1": {
+          redirect: ghRaw("dotbot", "scripts/install-dotbot.ps1"),
+        },
       },
     }),
     tailwindcss(),
