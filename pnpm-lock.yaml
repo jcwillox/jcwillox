@@ -5,9 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
-  bentocache:
-    hash: 0067fe1b746928c5874951ff8809a435dca587644ea522715a51da1d34170a96
-    path: patches/bentocache.patch
+  bentocache: 0067fe1b746928c5874951ff8809a435dca587644ea522715a51da1d34170a96
 
 importers:
 
