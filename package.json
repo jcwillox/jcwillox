@@ -52,7 +52,7 @@
     "@iconify/tailwind4": "1.2.1",
     "@tanstack/devtools-vite": "0.4.1",
     "@tsparticles/react": "3.0.0",
-    "@tsparticles/slim": "3.9.1",
+    "@tsparticles/slim": "4.4.0",
     "@types/node": "24.10.9",
     "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
