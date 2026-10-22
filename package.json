@@ -29,7 +29,7 @@
     "@tanstack/react-start": "1.157.16",
     "@tanstack/router-plugin": "1.157.16",
     "@upstash/redis": "1.36.1",
-    "@vercel/analytics": "1.6.1",
+    "@vercel/analytics": "2.0.1",
     "@vercel/edge-config": "1.4.3",
     "@vercel/functions": "3.4.0",
     "bentocache": "1.6.0",
